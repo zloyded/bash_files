@@ -51,7 +51,7 @@ __print_apt_shortcuts_info ()
 }
 
 # set apt aliases
-__set_apt_shortcuts ()
+__set_apt_aliases ()
 {
 	alias apts='sudo apt-cache search'
 	alias aptshow='sudo apt-cache show'
@@ -71,7 +71,7 @@ __set_apt_shortcuts ()
 
 
 __set_ls_aliases
-__set_apt_shortcuts
+__set_apt_aliases
 
 __print_apt_shortcuts_info
 
