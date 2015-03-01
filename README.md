@@ -1,6 +1,6 @@
 # Bash files
 
-These are my personl bash dotfiles for Linux - work in progress, everything's a bit quick and dirty.
+These are my personal bash files for Linux - currently work in progress, everything's a bit quick and dirty.
 
 Version 0.1 looks like this: ![Bash Welcome Screen v0.1](http://i.imgur.com/3b38gsW.png "Bash Welcome Screen v0.1")
 
@@ -13,7 +13,7 @@ Feel free to reuse, clone, etc.
 Clone the repository into your home directors, it will create the bash_dotfiles subdirectory
 
 ```bash
-git clone https://github.com/binaryanomaly/bash_files.git
+git clone https://github.com/binaryanomaly/bash_files
 ```
 
 Add the following at the end of your .bashrc in your home directory:
@@ -42,7 +42,7 @@ unset color_prompt force_color_prompt
 
 ## Files
 
-The files live in ~/bash_dotfiles/
+The files live in ~/bash_files/
 
  - bash_aliases.sh
  - bash_colors.sh
