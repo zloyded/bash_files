@@ -8,7 +8,7 @@
 #                                                                              #
 ################################################################################
 
-source ~/bash_dotfiles/bash_print_functions.sh
+source ~/bash_files/bash_print_functions.sh
 
 
 __print_hostname ()

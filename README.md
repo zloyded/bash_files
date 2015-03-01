@@ -17,8 +17,8 @@ git clone https://github.com/binaryanomaly/bash_files.git
 
 ```bash
 # Bash_dotfiles initialization
-if [ -f ~/bash_dotfiles/bash_init.sh ]; then
-    . ~/bash_dotfiles/bash_init.sh
+if [ -f ~/bash_files/bash_init.sh ]; then
+    . ~/bash_files/bash_init.sh
 fi
 ```
 
