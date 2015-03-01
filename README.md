@@ -2,7 +2,7 @@
 
 These are my personl bash dotfiles for Linux - work in progress, everything's a bit quick and dirty.
 
-Find an example here: ![Bash Welcome Screen v0.1](http://i.imgur.com/3b38gsW.png "Bash Welcome Screen v0.1")
+Version 0.1 looks like this: ![Bash Welcome Screen v0.1](http://i.imgur.com/3b38gsW.png "Bash Welcome Screen v0.1")
 
 
 Feel free to reuse, clone, etc.
