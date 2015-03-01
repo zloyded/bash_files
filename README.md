@@ -7,13 +7,13 @@ Feel free to reuse, clone, etc.
 
 ## Setup
 
-1. Clone the repository into your home directors, it will create the bash_dotfiles subdirectory
+Clone the repository into your home directors, it will create the bash_dotfiles subdirectory
 
 ```bash
 git clone https://github.com/binaryanomaly/bash_files.git
 ```
 
-2. Add the following at the end of your .bashrc in your home directory:
+Add the following at the end of your .bashrc in your home directory:
 
 ```bash
 # Bash_dotfiles initialization
@@ -22,6 +22,18 @@ if [ -f ~/bash_files/bash_init.sh ]; then
 fi
 ```
 
+For some to me yet not understood reason it seems to be necessary to alter the following section in .bashrc in order to make colours work flawlessly when the files reside in a separate dir:
+
+```bash
+if [ "$color_prompt" = yes ]; then
+    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+    . ~/bash_files/bash_prompt.sh #<-- Add this and comment out the line before with the prompt
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+fi
+unset color_prompt force_color_prompt
+
+```
 
 
 

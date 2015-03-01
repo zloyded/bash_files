@@ -14,6 +14,7 @@
 
 NORMAL=$(tput sgr0) # Reset text format to the terminal's default
 
+
 # -------------------------------
 
 BOLD=$(tput bold)
