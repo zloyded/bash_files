@@ -1,22 +1,18 @@
 #!/bin/bash
 
-################################################################################
+# ############################################################################ #
 #                                                                              #
 # Various greeting information - Needs /.bash_functions                        #
 #                                                                              #
 # binaryanomaly - v0.2                                                         #
 #                                                                              #
-################################################################################
+# ############################################################################ #
 
 
 source ~/bash_files/bash_print_functions.sh
 
-# Alias definitions.
-if [ -f ~/bash_files/bash_aliases.sh ]; then
-    . ~/bash_files/bash_aliases.sh
-fi
 
-__print_hostname ()
+__print_hostname_info ()
 {
     local STR_HOSTNAME="-= $HOSTNAME =-"
     local SYS_INFO="-= $(uname -srmo) =-"
@@ -38,20 +34,19 @@ __print_hostname ()
     fi
 
     printf "${NORMAL}\n"
-    __print_line
 }
 
 
-__print_sysinfo ()
-{
-    local SYS_INFO="-= $(uname -srmo) =-"
+# deprecated, merged into hostname_info
+# __print_sysinfo ()
+# {
+#     local SYS_INFO="-= $(uname -srmo) =-"
 
-    printf ${ORANGE}
-    __print_centered_string "$SYS_INFO" "0"
+#     printf ${ORANGE}
+#     __print_centered_string "$SYS_INFO" "0"
 
-    printf "${NORMAL}\n"
-    __print_line
-}
+#     printf "${NORMAL}\n"
+# }
 
 
 __print_diskinfo ()
@@ -64,7 +59,6 @@ __print_diskinfo ()
     # printf "%s\n" "$DISK_INFO" | boxes -d ada-box -ph8v1
 
     printf "${NORMAL}\n"
-    __print_line
 }
 
 __print_lastlogins ()
@@ -78,7 +72,6 @@ __print_lastlogins ()
     __print_centered_multiline "$LAST_LOGINS" "0"
 
     printf "${NORMAL}\n"
-    __print_line
 }
 
 __print_random_cmds ()
@@ -91,18 +84,31 @@ __print_random_cmds ()
 }
 
 
-# Call functions
-__print_hostname
+
+
+# ############################################################################ #
+#                                                                              #
+# Change order of sections etc. below                                          #
+#                                                                              #
+# ############################################################################ #
+
+
+__print_hostname_info
+__print_line
 
 __print_diskinfo
+__print_line
 
 #__print_lastlogins
+#__print_line
 
-__set_ls_aliases
-__set_apt_aliases
+# Print function for aliases is in bash_alias.sh for easier maintenance
+if [ -f ~/bash_files/bash_aliases.sh ]; then
+    . ~/bash_files/bash_aliases.sh
 
-__print_apt_shortcuts_info
+    __print_apt_shortcuts_info
+    __print_line
+fi
 
-__print_line
 
 __print_random_cmds
