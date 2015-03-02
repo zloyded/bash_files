@@ -16,11 +16,20 @@ Clone the repository into your home directory, it will create the bash_dotfiles 
 git clone https://github.com/binaryanomaly/bash_files
 ```
 
-Install figlet if you want the big hostname:
+Install figlet if you want the big hostname (script will autodetect):
 
 ```bash
 sudo apt-get install figlet
 ```
+
+Install lolcat if you want the big hostname colorized (script will autodetect):
+
+```bash
+sudo apt-get install lolcat
+```
+
+
+### Invoke init file from .bashrc
 
 Add the following at the end of your .bashrc in your home directory:
 
@@ -30,6 +39,8 @@ if [ -f ~/bash_files/bash_init.sh ]; then
     . ~/bash_files/bash_init.sh
 fi
 ```
+
+### Fix weird behaviour
 
 For some to me yet not understood reason it seems to be necessary to alter the following section in .bashrc in order to make colours work flawlessly when the files reside in a separate dir:
 
