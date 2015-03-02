@@ -16,6 +16,12 @@ Clone the repository into your home directory, it will create the bash_dotfiles 
 git clone https://github.com/binaryanomaly/bash_files
 ```
 
+Install figlet if you want the big hostname:
+
+```bash
+sudo apt-get install figlet
+```
+
 Add the following at the end of your .bashrc in your home directory:
 
 ```bash
