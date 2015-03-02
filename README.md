@@ -10,7 +10,7 @@ Feel free to reuse, clone, etc.
 
 ## Setup
 
-Clone the repository into your home directors, it will create the bash_dotfiles subdirectory
+Clone the repository into your home directory, it will create the bash_dotfiles subdirectory:
 
 ```bash
 git clone https://github.com/binaryanomaly/bash_files
