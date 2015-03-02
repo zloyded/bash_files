@@ -4,7 +4,7 @@
 #                                                                              #
 # Helper functions for centered printing of single-line and multi-line vars    #
 #                                                                              #
-# binaryanomaly - v0.1                                                         #
+# binaryanomaly - v0.2                                                         #
 #                                                                              #
 ################################################################################
 

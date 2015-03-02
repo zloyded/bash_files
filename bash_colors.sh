@@ -4,7 +4,7 @@
 #                                                                              #
 # Bash tput color definition												   #
 #                                                                              #
-# binaryanomaly - v0.1                                                         #
+# binaryanomaly - v0.2                                                         #
 #                                                                              #
 ################################################################################
 
@@ -42,4 +42,4 @@ LIME_YELLOW=$(tput setaf 190)
 POWDER_BLUE=$(tput setaf 153)
 ORANGE=$(tput setaf 172)
 PURPLE=$(tput setaf 141)
-BETTER_GREY=$(tput setaf 245)
+BETTER_GREY=$(tput setaf 248)

@@ -4,7 +4,7 @@
 #                                                                              #
 # Bash aliases definition - Needs /.bash_functions							   #
 #                                                                              #
-# binaryanomaly - v0.1                                                         #
+# binaryanomaly - v0.2                                                         #
 #                                                                              #
 ################################################################################
 

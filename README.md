@@ -1,11 +1,19 @@
 # Bash files
 
-These are my personal bash files for Linux - currently a work in progress poroject. That's why everything is still a bit quick and dirty.
-
-Version 0.1 looks like this: ![Bash Welcome Screen v0.1](http://i.imgur.com/3b38gsW.png "Bash Welcome Screen v0.1")
-
+These are my personal bash files for Linux - currently a work in progress project. That's why everything is still a bit quick and dirty.
 
 Feel free to reuse, clone, etc.
+
+---
+
+### New features in v0.2
+ - Lolcat support
+ - Random bash cmd info
+ - Last logins hidden by default
+
+For now customize directly in bash_greeter.sh what components you'd like to show.
+
+v0.2 looks like this: ![Bash Welcome Screen v0.2](http://i.imgur.com/jiCK38n.png "Bash Welcome Screen v0.2")
 
 
 ## Setup
@@ -63,7 +71,7 @@ unset color_prompt force_color_prompt
 
 
 
-## Files
+## File structure
 
 The files live in ~/bash_files/
 
@@ -74,19 +82,9 @@ The files live in ~/bash_files/
  - bash_print_functions.sh
  - bash_prompt.sh
 
-Filenames should be self-speaking for now.
+Filenames should be self-speaking.
 
-
-
-
-## Dependencies
-
-There are no hard outside dependencies but if you want to have the hostname displayed in ascii font and optionally colored you have to install:
-
-- figlet
-- lolcat
-
-
+---
 
 Enjoy!
 

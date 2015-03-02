@@ -4,7 +4,7 @@
 #                                                                              #
 # Various greeting information - Needs /.bash_functions                        #
 #                                                                              #
-# binaryanomaly - v0.1                                                         #
+# binaryanomaly - v0.2                                                         #
 #                                                                              #
 ################################################################################
 
@@ -81,19 +81,19 @@ __print_lastlogins ()
     __print_line
 }
 
-__print_news ()
+__print_random_cmds ()
 {
-    printf ${BETTER_GREY}
-    net_news=$(host -t txt istheinternetonfire.com | cut -f 2 -d '"' | sed "s/[\]; /\n/g")
-    __print_centered_multiline "$net_news" "0"
-    printf "${NORMAL}\n\n"
+    rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
+    rnd_cmd_info+=$(whatis $(ls /bin | shuf -n 1))
+    __print_centered_multiline "$rnd_cmd_info" "0"
+
+    printf "${NORMAL}\n"
 }
 
 
 # Call functions
 __print_hostname
 
-#__print_diskinfo
 __print_diskinfo
 
 #__print_lastlogins
@@ -104,5 +104,5 @@ __set_apt_aliases
 __print_apt_shortcuts_info
 
 __print_line
-__print_news
 
+__print_random_cmds

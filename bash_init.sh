@@ -4,7 +4,7 @@
 #                                                                              #
 # Init script to be called from .bashrc                                        #
 #                                                                              #
-# binaryanomaly - v0.1                                                         #
+# binaryanomaly - v0.2                                                         #
 #                                                                              #
 ################################################################################
 
