@@ -42,6 +42,11 @@ fi
 
 ### Fix weird behaviour
 
+```bash
+"--> If someone knows how to fix this in a proper way,
+please create a pull request, thx."
+```
+
 For some to me yet not understood reason it seems to be necessary to alter the following section in .bashrc in order to make colours work flawlessly when the files reside in a separate dir:
 
 ```bash
