@@ -9,8 +9,6 @@
 ################################################################################
 
 
-source ~/bash_files/bash_print_functions.sh
-
 __set_ls_aliases ()
 {
 	# enable color support of ls and also add handy aliases
@@ -28,7 +26,6 @@ __set_ls_aliases ()
 	    alias fgrep='fgrep --color=auto'
 	    alias egrep='egrep --color=auto'
 	fi
-
 }
 
 
@@ -42,12 +39,11 @@ __print_apt_shortcuts_info ()
 	str_print+="${GREEN}aptupg   ${GREY}=  sudo apt-get dist-upgrade -V && sudo apt-get autoremove"$'\n'
 	str_print+="${GREEN}aptupgd  ${GREY}=  sudo apt-get update && sudo apt-get dist-upgrade -V &&"$'\n'
 	str_print+="${GREEN}         ${GREY}   sudo apt-get autoremove"$'\n'
-	str_print+="${GREEN}chkup    ${GREY}=  /usr/lib/update-notifier/apt-check -p --human-readable"$'\n\n'
+	str_print+="${GREEN}chkup    ${GREY}=  /usr/lib/update-notifier/apt-check -p --human-readable"$'\n'
 
 
 	# print apt shortcuts
 	__print_centered_multiline "$str_print" "10"
-
 }
 
 # set apt aliases
@@ -62,16 +58,7 @@ __set_apt_aliases ()
 
 	alias chkup='/usr/lib/update-notifier/apt-check -p --human-readable'
 	alias chkboot='cat /var/run/reboot-required'
-
 }
 
 # colored GCC warnings and errors
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-
-
-__set_ls_aliases
-__set_apt_aliases
-
-__print_apt_shortcuts_info
-

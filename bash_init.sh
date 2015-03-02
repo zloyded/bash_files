@@ -22,8 +22,3 @@ fi
 if [ -f ~/bash_files/bash_greeter.sh ]; then
     . ~/bash_files/bash_greeter.sh
 fi
-
-# Alias definitions.
-if [ -f ~/bash_files/bash_aliases.sh ]; then
-    . ~/bash_files/bash_aliases.sh
-fi

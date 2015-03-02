@@ -22,6 +22,11 @@ __print_ascii_art ()
     printf "%s\n" "$1" | figlet -w $COLUMNS -c
 }
 
+__print_ascii_art_lolcat ()
+{
+    { printf "%s\n" "$1" | figlet -w $COLUMNS -c ; __print_centered_string "$2" ; } | lolcat -S 550
+}
+
 
 __print_centered_string ()
 {

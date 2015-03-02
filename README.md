@@ -1,6 +1,6 @@
 # Bash files
 
-These are my personal bash files for Linux - currently work in progress, everything's a bit quick and dirty.
+These are my personal bash files for Linux - currently a work in progress poroject. That's why everything is still a bit quick and dirty.
 
 Version 0.1 looks like this: ![Bash Welcome Screen v0.1](http://i.imgur.com/3b38gsW.png "Bash Welcome Screen v0.1")
 
@@ -58,10 +58,10 @@ Filenames should be self-speaking for now.
 
 ## Dependencies
 
-There are no hard outside dependencies but if you want to have the hostname displayed in ascii font you have to install:
+There are no hard outside dependencies but if you want to have the hostname displayed in ascii font and optionally colored you have to install:
 
 - figlet
-
+- lolcat
 
 
 

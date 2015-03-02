@@ -11,26 +11,40 @@
 
 source ~/bash_files/bash_print_functions.sh
 
+# Alias definitions.
+if [ -f ~/bash_files/bash_aliases.sh ]; then
+    . ~/bash_files/bash_aliases.sh
+fi
 
 __print_hostname ()
 {
     local STR_HOSTNAME="-= $HOSTNAME =-"
+    local SYS_INFO="-= $(uname -srmo) =-"
 
+    # Check if figlet is available
     if [[ -x /usr/bin/figlet ]]; then
-        #Print hostename with figlets
-        __print_ascii_art "$STR_HOSTNAME"
+
+        # Check if lolcat is available
+        if [[ -x /usr/games/lolcat ]]; then
+            #print hostname with figlets and lolcat coloring
+            __print_ascii_art_lolcat "$STR_HOSTNAME" "$SYS_INFO"
+        else
+            #Print hostename with figlets
+            __print_ascii_art "$STR_HOSTNAME"
+        fi
+
     else
         __print_centered_string "$STR_HOSTNAME" "0"
     fi
 
-    #printf "${NORMAL}\n"
+    printf "${NORMAL}\n"
+    __print_line
 }
 
 
 __print_sysinfo ()
 {
-    local SYS_INFO=$(uname -srmo)
-    local SYS_INFO="-= $SYS_INFO =-"
+    local SYS_INFO="-= $(uname -srmo) =-"
 
     printf ${ORANGE}
     __print_centered_string "$SYS_INFO" "0"
@@ -67,15 +81,28 @@ __print_lastlogins ()
     __print_line
 }
 
-
+__print_news ()
+{
+    printf ${BETTER_GREY}
+    net_news=$(host -t txt istheinternetonfire.com | cut -f 2 -d '"' | sed "s/[\]; /\n/g")
+    __print_centered_multiline "$net_news" "0"
+    printf "${NORMAL}\n\n"
+}
 
 
 # Call functions
 __print_hostname
 
-__print_sysinfo
-
+#__print_diskinfo
 __print_diskinfo
 
-__print_lastlogins
+#__print_lastlogins
+
+__set_ls_aliases
+__set_apt_aliases
+
+__print_apt_shortcuts_info
+
+__print_line
+__print_news
 
