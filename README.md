@@ -4,6 +4,11 @@ These are my personal bash files for Linux - currently a work in progress projec
 
 Feel free to reuse, clone, etc.
 
+Enjoy!
+
+-binaryanomaly
+
+
 ---
 
 ### New features in v0.2
@@ -84,8 +89,4 @@ The files live in ~/bash_files/
 
 Filenames should be self-speaking.
 
----
-
-Enjoy!
-
--binaryanomaly
+EOF
