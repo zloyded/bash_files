@@ -38,7 +38,8 @@ if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
     . ~/bash_files/bash_prompt.sh #<-- Add this and comment out the line before with the prompt
 else
-    PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    . ~/bash_files/bash_prompt.sh #<-- Add this and comment out the line before with the prompt
 fi
 unset color_prompt force_color_prompt
 
@@ -56,7 +57,7 @@ The files live in ~/bash_files/
  - bash_init.sh
  - bash_print_functions.sh
  - bash_prompt.sh
- 
+
 Filenames should be self-speaking for now.
 
 
