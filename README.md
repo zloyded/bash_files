@@ -53,28 +53,6 @@ if [ -f ~/.bash_files/bash_init.sh ]; then
 fi
 ```
 
-### Fix weird behaviour
-
-```bash
-"--> If someone knows how to fix this in a proper way,
-please create a pull request, thx."
-```
-
-For some to me yet not understood reason it seems to be necessary to alter the following section in .bashrc in order to make colours work flawlessly when the files reside in a separate dir:
-
-```bash
-if [ "$color_prompt" = yes ]; then
-    #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    . ~/.bash_files/bash_prompt.sh #<-- Add this and comment out the line before with the prompt
-else
-    #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    . ~/.bash_files/bash_prompt.sh #<-- Add this and comment out the line before with the prompt
-fi
-unset color_prompt force_color_prompt
-
-```
-
-
 
 ## File structure
 
