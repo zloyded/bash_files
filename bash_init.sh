@@ -18,22 +18,9 @@ elif infocmp xterm-256color >/dev/null 2>&1; then
 	export TERM=xterm-256color
 fi
 
-# Bash colors --> Load first
-if [ -f ~/.bash_files/bash_colors.sh ]; then
-    . ~/.bash_files/bash_colors.sh
-fi
 
-# Bash prompt
-if [ -f ~/.bash_files/bash_prompt.sh ]; then
-    . ~/.bash_files/bash_prompt.sh
-fi
-
-# Bash greeter
-if [ -f ~/.bash_files/bash_greeter.sh ]; then
-    . ~/.bash_files/bash_greeter.sh
-fi
-
-# Alias definitions
-if [ -f ~/.bash_files/bash_aliases.sh ]; then
-    . ~/.bash_files/bash_aliases.sh
-fi
+# Source files - bash_colors.sh first
+for file in ~/.bash_files/{bash_colors.sh,bash_prompt.sh,bash_greeter.sh}; do
+  [ -r "$file" ] && source "$file"
+done
+unset file
