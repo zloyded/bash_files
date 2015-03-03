@@ -12,16 +12,16 @@
 source ~/.bash_files/bash_print_functions.sh
 
 
-__print_hostname_info ()
+function __print_hostname_info()
 {
     local STR_HOSTNAME="-= $HOSTNAME =-"
     local SYS_INFO="-= $(uname -srmo) =-"
 
     # Check if figlet is available
-    if [[ -x /usr/bin/figlet ]]; then
+    if [[ -x $(which figlet) ]]; then
 
         # Check if lolcat is available
-        if [[ -x /usr/games/lolcat ]]; then
+        if [[ -x $(which lolcat) ]]; then
             #print hostname with figlets and lolcat coloring
             __print_ascii_art_lolcat "$STR_HOSTNAME" "$SYS_INFO"
         else
@@ -49,7 +49,7 @@ __print_hostname_info ()
 # }
 
 
-__print_diskinfo ()
+function __print_diskinfo()
 {
     # disk usage, minus def and swap
     local DISK_INFO=$(df -h -x tmpfs -x devtmpfs -x ecryptfs -x fuse.encfs -T)
@@ -61,7 +61,7 @@ __print_diskinfo ()
     printf "${NORMAL}\n"
 }
 
-__print_lastlogins ()
+function __print_lastlogins()
 {
     # LAST_LOGINS=$(last -in 3 -ad)
     # printf "%s\n" "$LAST_LOGINS" | boxes -d ada-box -ph8v1
@@ -74,7 +74,7 @@ __print_lastlogins ()
     printf "${NORMAL}\n"
 }
 
-__print_random_cmds ()
+function __print_random_cmds()
 {
     rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
     rnd_cmd_info+=$(whatis $(ls /bin | shuf -n 1))
