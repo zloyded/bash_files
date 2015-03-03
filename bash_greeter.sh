@@ -9,7 +9,7 @@
 # ############################################################################ #
 
 
-source ~/bash_files/bash_print_functions.sh
+source ~/.bash_files/bash_print_functions.sh
 
 
 __print_hostname_info ()
@@ -53,7 +53,7 @@ __print_diskinfo ()
 {
     # disk usage, minus def and swap
     local DISK_INFO=$(df -h -x tmpfs -x devtmpfs -x ecryptfs -x fuse.encfs -T)
-    
+
     printf ${POWDER_BLUE}
     __print_centered_multiline "$DISK_INFO" "0"
     # printf "%s\n" "$DISK_INFO" | boxes -d ada-box -ph8v1
@@ -103,8 +103,8 @@ __print_line
 #__print_line
 
 # Print function for aliases is in bash_alias.sh for easier maintenance
-if [ -f ~/bash_files/bash_aliases.sh ]; then
-    . ~/bash_files/bash_aliases.sh
+if [ -f ~/.bash_files/bash_aliases.sh ]; then
+    . ~/.bash_files/bash_aliases.sh
 
     __print_apt_shortcuts_info
     __print_line

@@ -23,10 +23,10 @@ v0.2 looks like this: ![Bash Welcome Screen v0.2](http://i.imgur.com/jiCK38n.png
 
 ## Setup
 
-Clone the repository into your home directory, it will create the bash_dotfiles subdirectory:
+Clone the repository into your home directory, it will create the `.bash_files` subdirectory:
 
 ```bash
-git clone https://github.com/binaryanomaly/bash_files
+git clone https://github.com/binaryanomaly/bash_files ~/.bash_files
 ```
 
 Install figlet if you want the big hostname (script will autodetect):
@@ -48,8 +48,8 @@ Add the following at the end of your .bashrc in your home directory:
 
 ```bash
 # Bash_dotfiles initialization
-if [ -f ~/bash_files/bash_init.sh ]; then
-    . ~/bash_files/bash_init.sh
+if [ -f ~/.bash_files/bash_init.sh ]; then
+    . ~/.bash_files/bash_init.sh
 fi
 ```
 
@@ -65,10 +65,10 @@ For some to me yet not understood reason it seems to be necessary to alter the f
 ```bash
 if [ "$color_prompt" = yes ]; then
     #PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
-    . ~/bash_files/bash_prompt.sh #<-- Add this and comment out the line before with the prompt
+    . ~/.bash_files/bash_prompt.sh #<-- Add this and comment out the line before with the prompt
 else
     #PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    . ~/bash_files/bash_prompt.sh #<-- Add this and comment out the line before with the prompt
+    . ~/.bash_files/bash_prompt.sh #<-- Add this and comment out the line before with the prompt
 fi
 unset color_prompt force_color_prompt
 
@@ -78,7 +78,7 @@ unset color_prompt force_color_prompt
 
 ## File structure
 
-The files live in ~/bash_files/
+The files live in ~/.bash_files/
 
  - bash_aliases.sh
  - bash_colors.sh
