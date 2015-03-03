@@ -102,13 +102,17 @@ __print_line
 #__print_lastlogins
 #__print_line
 
-# Print function for aliases is in bash_alias.sh for easier maintenance
+# Print function for aliases
+# which is in bash_alias.sh for easier maintenance
 if [ -f ~/.bash_files/bash_aliases.sh ]; then
     . ~/.bash_files/bash_aliases.sh
 
     __print_apt_shortcuts_info
-    __print_line
 fi
 
+# Check if whatis is available
+if [ -f $(which whatis) ]; then
+    __print_line
+    __print_random_cmds
+fi
 
-__print_random_cmds

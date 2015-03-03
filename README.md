@@ -1,6 +1,6 @@
 # Bash files
 
-These are my personal bash files for Linux - currently a work in progress project. That's why everything is still a bit quick and dirty.
+These are my personal bash files for Linux which should also work on Mac OS X - currently a work in progress project. That's why everything is still a bit quick and dirty.
 
 Feel free to reuse, clone, etc.
 
@@ -29,22 +29,17 @@ Clone the repository into your home directory, it will create the `.bash_files` 
 git clone https://github.com/binaryanomaly/bash_files ~/.bash_files
 ```
 
-Install figlet if you want the big hostname (script will autodetect):
+Install figlet if you want the big hostname and lolcat if you want it colorized (the script will autodetect both):
 
+**Linux**
 ```bash
-sudo apt-get install figlet
-```
-
-Install lolcat if you want the big hostname colorized (script will autodetect):
-
-```bash
-sudo apt-get install lolcat
+sudo apt-get install figlet lolcat
 ```
 
 
-### Invoke init file from .bashrc
+### Invoke init file from .bashrc (.bash_profile on Mac OS X)
 
-Add the following at the end of your .bashrc in your home directory:
+Add the following at the end of your .bashrc or .bash_profile in your home directory:
 
 ```bash
 # Bash_dotfiles initialization
@@ -58,13 +53,14 @@ fi
 
 The files live in ~/.bash_files/
 
- - bash_aliases.sh
- - bash_colors.sh
- - bash_greeter.sh
- - bash_init.sh
- - bash_print_functions.sh
- - bash_prompt.sh
+| File | Description |
+| ---- | ----------- |
+| bash_aliases.sh | Defines the aliases and contains the text to be printed |
+| bash_colors.sh  | Sets the colors, need tput 256 color support |
+| bash_greeter.sh  | Elements / functions that make the welcome screen |
+| bash_init.sh  | Init file that sources all the other files (color, prompt, greeter) |
+| bash_print_functions.sh  | Print helper functions for centered single and multline strings |
+| bash_prompt.sh  | Bash prompt |
 
-Filenames should be self-speaking.
 
-EOF
+-EOF
