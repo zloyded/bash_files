@@ -11,12 +11,12 @@ Enjoy!
 
 ---
 
-#### New features 04.03.2015
+##### New features 04.03.2015
  - Added more cross-platform robust checks
  - Added reboot required check and message
 
 
-#### New features 03.03.2015
+##### New features 03.03.2015
  - Lolcat support
  - Random bash cmd info
  - Last logins hidden by default
