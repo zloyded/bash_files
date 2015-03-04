@@ -36,6 +36,12 @@ Install figlet if you want the big hostname and lolcat if you want it colorized 
 sudo apt-get install figlet lolcat
 ```
 
+**OS X**
+```
+brew install figlet
+gem install lolcat
+```
+
 
 ### Invoke init file from .bashrc (.bash_profile on Mac OS X)
 
