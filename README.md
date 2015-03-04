@@ -45,7 +45,7 @@ gem install lolcat
 
 ### Invoke init file from .bashrc (.bash_profile on Mac OS X)
 
-Add the following at the end of your .bashrc or .bash_profile in your home directory:
+Add the following at the end of your `.bashrc` or `.bash_profile` in your home directory:
 
 ```bash
 # Bash_dotfiles initialization
