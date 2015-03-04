@@ -83,7 +83,12 @@ function __print_random_cmds()
     printf "${NORMAL}\n"
 }
 
-
+function __print_reboot()
+{
+    printf "${BETTER_YELLOW}"
+    __print_centered_string "Reboot required!"
+    printf "\n${NORMAL}"
+}
 
 
 # ############################################################################ #
@@ -111,8 +116,12 @@ if [ -f ~/.bash_files/bash_aliases.sh ]; then
 fi
 
 # Check if whatis is available
-if [ -f $(which whatis) ]; then
+if [ -x $(which whatis) ]; then
     __print_line
     __print_random_cmds
 fi
 
+if [ -e /var/run/reboot-required ]; then
+    __print_line
+    __print_reboot
+fi
