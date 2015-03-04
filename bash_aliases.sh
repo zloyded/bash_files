@@ -12,7 +12,7 @@
 __set_ls_aliases ()
 {
 	# enable color support of ls and also add handy aliases
-	if [ -x /usr/bin/dircolors ]; then
+	if [ -x $(which dircolors) ]; then
 	    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
 	    alias ls='ls --color=auto'
 	    #alias dir='dir --color=auto'
@@ -49,15 +49,17 @@ __print_apt_shortcuts_info ()
 # set apt aliases
 __set_apt_aliases ()
 {
-	alias apts='sudo apt-cache search'
-	alias aptshow='sudo apt-cache show'
-	alias aptinst='sudo apt-get install -V'
-	alias aptupd='sudo apt-get update'
-	alias aptupg='sudo apt-get dist-upgrade -V && sudo apt-get autoremove'
-	alias aptupgd='sudo apt-get update && sudo apt-get dist-upgrade -V && sudo apt-get autoremove'
+	if [ -x $(which apt) ]; then
+		alias apts='sudo apt-cache search'
+		alias aptshow='sudo apt-cache show'
+		alias aptinst='sudo apt-get install -V'
+		alias aptupd='sudo apt-get update'
+		alias aptupg='sudo apt-get dist-upgrade -V && sudo apt-get autoremove'
+		alias aptupgd='sudo apt-get update && sudo apt-get dist-upgrade -V && sudo apt-get autoremove'
 
-	alias chkup='/usr/lib/update-notifier/apt-check -p --human-readable'
-	alias chkboot='cat /var/run/reboot-required'
+		alias chkup='/usr/lib/update-notifier/apt-check -p --human-readable'
+		alias chkboot='cat /var/run/reboot-required'
+	fi
 }
 
 # colored GCC warnings and errors
