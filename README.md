@@ -11,14 +11,19 @@ Enjoy!
 
 ---
 
-### New features in v0.2
+#### New features 04.03.2015
+ - Added more cross-platform robust checks
+ - Added reboot required check and message
+
+
+#### New features 03.03.2015
  - Lolcat support
  - Random bash cmd info
  - Last logins hidden by default
 
 For now customize directly in bash_greeter.sh what components you'd like to show.
 
-v0.2 looks like this: ![Bash Welcome Screen v0.2](http://i.imgur.com/jiCK38n.png "Bash Welcome Screen v0.2")
+Version from 03.03.2015 looks like this: ![Bash Welcome Screen 03032015](http://i.imgur.com/jiCK38n.png "Bash Welcome Screen 03.03.2015")
 
 
 ## Setup
