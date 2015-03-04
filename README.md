@@ -16,6 +16,7 @@ Enjoy!
 ##### New features 04.03.2015
  - Added more cross-platform robust checks
  - Added reboot required check and message
+ - Added basic config switches for info sections
 
 
 ##### New features 03.03.2015

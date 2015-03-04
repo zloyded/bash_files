@@ -11,6 +11,18 @@
 
 source ~/.bash_files/bash_print_functions.sh
 
+# ###
+#
+# Config section 1 = show otherwise leave empty
+#
+# ###
+show_hostname="1"
+show_diskinfo="1"
+show_lastlogins=""
+show_aliases=""
+show_random_cmdinfo="1"
+
+
 
 function __print_hostname_info()
 {
@@ -74,7 +86,7 @@ function __print_lastlogins()
     printf "${NORMAL}\n"
 }
 
-function __print_random_cmds()
+function __print_random_cmdinfo()
 {
     rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
     rnd_cmd_info+=$(whatis $(ls /bin | shuf -n 1))
@@ -97,28 +109,39 @@ function __print_reboot()
 #                                                                              #
 # ############################################################################ #
 
+if [ ! -z "$show_hostname" ]; then
+	__print_hostname_info
+fi
 
-__print_hostname_info
-__print_line
+if [ ! -z "$show_diskinfo" ]; then
+	__print_line
+	__print_diskinfo
+fi
 
-__print_diskinfo
-__print_line
+if [ ! -z "$show_lastlogins" ]; then
+	__print_line
+	__print_lastlogins
+fi
 
-#__print_lastlogins
-#__print_line
-
-# Print function for aliases
-# which is in bash_alias.sh for easier maintenance
+# Load aliases
 if [ -f ~/.bash_files/bash_aliases.sh ]; then
     . ~/.bash_files/bash_aliases.sh
 
-    __print_apt_shortcuts_info
+    # Print function for aliases
+	# which is in bash_alias.sh for easier maintenance
+	if [ ! -z "$show_aliases" ]; then
+		__print_line
+		__print_apt_shortcuts_info
+	fi
 fi
 
-# Check if whatis is available
-if [ -x $(which whatis) ]; then
-    __print_line
-    __print_random_cmds
+if [ ! -z "$show_random_cmdinfo" ]; then
+
+	# Check if whatis is available
+	if [ -x $(which whatis) ]; then
+	    __print_line
+	    __print_random_cmdinfo
+	fi
 fi
 
 if [ -e /var/run/reboot-required ]; then
