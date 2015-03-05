@@ -63,8 +63,8 @@ function __print_hostname_info()
 
 function __print_diskinfo()
 {
-    # disk usage, minus def and swap
-    local DISK_INFO=$(df -h -x tmpfs -x devtmpfs -x ecryptfs -x fuse.encfs -T)
+    # disk usage, don't show tmpfs, ecryptfs, encfs, bccfs, sfpfs
+    local DISK_INFO=$(df -h -x tmpfs -x devtmpfs -x ecryptfs -x fuse.encfs -x bccfs -x afpfs -T)
 
     printf ${POWDER_BLUE}
     __print_centered_multiline "$DISK_INFO" "0"
