@@ -11,15 +11,18 @@ Enjoy!
 
 ---
 
-### Updates
+### Updates - New features
 
-##### New features 04.03.2015
+##### 06.03.2015
+ - Created separate file for configuration values
+
+##### 04.03.2015
  - Added more cross-platform robust checks
  - Added reboot required check and message
  - Added basic config switches for info sections
 
 
-##### New features 03.03.2015
+##### 03.03.2015
  - Lolcat support
  - Random bash cmd info
  - Last logins hidden by default
