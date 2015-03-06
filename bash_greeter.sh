@@ -11,18 +11,6 @@
 
 source ~/.bash_files/bash_print_functions.sh
 
-# ###
-#
-# Config section 1 = show otherwise leave empty
-#
-# ###
-show_hostname="1"
-show_diskinfo="1"
-show_lastlogins=""
-show_aliases=""
-show_random_cmdinfo="1"
-
-
 
 function __print_hostname_info()
 {
