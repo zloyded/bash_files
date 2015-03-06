@@ -1,5 +1,7 @@
 #!/bin/bash
 
+show_reboot_info="1"
+
 function parse_git_dirty() {
   [[ $(git status 2> /dev/null | tail -n1) != "nothing to commit (working directory clean)" ]] && echo "*"
 }
@@ -8,5 +10,12 @@ function parse_git_branch() {
   git branch --no-color 2> /dev/null | sed -e '/^[^*]/d' -e "s/* \(.*\)/\1$(parse_git_dirty)/"
 }
 
-PS1="\[$GREY\]\t\n\[$RED\]\u\[$GREY\]@\[$ORANGE\]\h \[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] \[$RESET\]"
+function reboot_required() {
+	if [ ! -z "$show_reboot_info" ]; then
+		if [ -e /var/run/reboot-required ]; then
+			printf "${BETTER_YELLOW}Reboot required!${NORMAL}"
+		fi
+	fi
+}
 
+PS1="\$(reboot_required)\n\[$GREY\]\t\n\[$RED\]\u\[$GREY\]@\[$ORANGE\]\h \[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] \[$RESET\]"
