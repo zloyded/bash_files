@@ -74,6 +74,7 @@ The files live in ~/.bash_files/
 | ---- | ----------- |
 | bash_aliases.sh | Defines the aliases and contains the text to be printed |
 | bash_colors.sh  | Sets the colors, need tput 256 color support |
+| bash_config.sh  | Holds the config values |
 | bash_greeter.sh  | Elements / functions that make the welcome screen |
 | bash_init.sh  | Init file that sources all the other files (color, prompt, greeter) |
 | bash_print_functions.sh  | Print helper functions for centered single and multline strings |
