@@ -18,7 +18,7 @@ Feel free to contribute, reuse, clone, etc.
 ### Updates - New features
 
 ##### 07.3.2015
- - Created `lib/` for base functionality, all files matching the pattern `base*.sh` will be loaded by default
+ - Created `lib/` dir for base functionality, all files matching the pattern `base*.sh` will be loaded by default
  - Created dedicated `/aliases` dir, all files matching the pattern `*aliases.sh` will be loaded by default
  - Moved ls and apt into separate files
 
