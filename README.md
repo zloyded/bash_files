@@ -46,7 +46,7 @@ git clone https://github.com/binaryanomaly/bash_files ~/.bash_files
 
 Install figlet if you want the big hostname and lolcat if you want it colorized (the script will autodetect both):
 
-**Linux**
+**Linux** (apt)
 ```bash
 sudo apt-get install figlet lolcat
 ```
