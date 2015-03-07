@@ -1,10 +1,14 @@
 # Bash files
 
-These are my personal bash files for Linux which should also work on Mac OS X - currently a work in progress project. That's why everything is still a bit quick and dirty.
+This is my bash files Project for Linux which should also work on Mac OS X.
+It mainly grew out of the tweaks and additions I applied for my personal use.
+
+Some inspiration was taken from projects such as [oh-my-zsh
+](https://github.com/robbyrussell/oh-my-zsh/tree/master/lib) and [bash-it](https://github.com/revans/bash-it) and others.
+
+`Bash files` is a work in progress project, everything is still a bit quick and dirty and constantly moving. I hope you enjoy it nevertheless.
 
 Feel free to reuse, clone, etc.
-
-Enjoy!
 
 -binaryanomaly
 
@@ -56,7 +60,7 @@ if [ -f ~/.bash_files/bash_init.sh ]; then
 fi
 ```
 
-### Additional Packages
+### Install additional packages
 
 Install figlet if you want the big hostname and lolcat if you want it colorized (the script will autodetect both):
 
@@ -72,7 +76,7 @@ gem install lolcat
 ```
 
 
-## Directory and File structure
+## Directory and file structure
 
 The project lives in `~/.bash_files/` 
 
