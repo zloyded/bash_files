@@ -44,6 +44,20 @@ Clone the repository into your home directory, it will create the `.bash_files` 
 git clone https://github.com/binaryanomaly/bash_files ~/.bash_files
 ```
 
+
+### Invoke init file from .bashrc (.bash_profile on Mac OS X)
+
+Add the following at the end of your `.bashrc` or `.bash_profile` in your home directory:
+
+```bash
+# Bash_dotfiles initialization
+if [ -f ~/.bash_files/bash_init.sh ]; then
+    . ~/.bash_files/bash_init.sh
+fi
+```
+
+### Additional Packages
+
 Install figlet if you want the big hostname and lolcat if you want it colorized (the script will autodetect both):
 
 **Linux** (apt)
@@ -58,31 +72,21 @@ gem install lolcat
 ```
 
 
-### Invoke init file from .bashrc (.bash_profile on Mac OS X)
+## Directory and File structure
 
-Add the following at the end of your `.bashrc` or `.bash_profile` in your home directory:
+The project lives in `~/.bash_files/` 
 
-```bash
-# Bash_dotfiles initialization
-if [ -f ~/.bash_files/bash_init.sh ]; then
-    . ~/.bash_files/bash_init.sh
-fi
-```
+| Directory | Description |
+| ---- | ----------- |
+| lib/ | Directory where basefunctionality is stored - `base*.sh` gets sourced |
+| aliases/  | Directory for alias definitions - `*.aliases.sh` gets sourced |
 
+<br>
 
-## File structure
-
-The files live in ~/.bash_files/
 
 | File | Description |
 | ---- | ----------- |
-| bash_aliases.sh | Defines the aliases and contains the text to be printed |
-| bash_colors.sh  | Sets the colors, need tput 256 color support |
-| bash_config.sh  | Holds the config values |
+| bash_config.sh  | Project configuration file |
 | bash_greeter.sh  | Elements / functions that make the welcome screen |
 | bash_init.sh  | Init file that sources all the other files (color, prompt, greeter) |
-| bash_print_functions.sh  | Print helper functions for centered single and multline strings |
 | bash_prompt.sh  | Bash prompt |
-
-
--EOF
