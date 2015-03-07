@@ -1,12 +1,7 @@
 #!/bin/bash
 
-################################################################################
-#                                                                              #
-# Helper functions for centered printing of single-line and multi-line vars    #
-#                                                                              #
-# binaryanomaly - v0.2                                                         #
-#                                                                              #
-################################################################################
+
+# Printf helper functions for printing centered single and multiline strings
 
 __print_line ()
 {
@@ -17,10 +12,12 @@ __print_line ()
     printf "\n"
 }
 
+
 __print_ascii_art ()
 {
     printf "%s\n" "$1" | figlet -w $COLUMNS -c
 }
+
 
 __print_ascii_art_lolcat ()
 {

@@ -9,7 +9,7 @@
 # ############################################################################ #
 
 
-source ~/.bash_files/bash_print_functions.sh
+source ~/.bash_files/lib/bash_print_functions.sh
 
 
 function __print_hostname_info()
