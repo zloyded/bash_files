@@ -4,11 +4,11 @@ This is my bash files Project for Linux which should also work on Mac OS X.
 It mainly grew out of the tweaks and additions I applied for my personal use.
 
 Some inspiration was taken from projects such as [oh-my-zsh
-](https://github.com/robbyrussell/oh-my-zsh/tree/master/lib) and [bash-it](https://github.com/revans/bash-it) and others.
+](https://github.com/robbyrussell/oh-my-zsh/tree/master/lib), [bash-it](https://github.com/revans/bash-it) and others.
 
 `Bash files` is a work in progress project, everything is still a bit quick and dirty and constantly moving. I hope you enjoy it nevertheless.
 
-Feel free to reuse, clone, etc.
+Feel free to contribute, reuse, clone, etc.
 
 -binaryanomaly
 
