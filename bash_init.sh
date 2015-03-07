@@ -9,7 +9,7 @@ fi
 
 
 # Load prompt, greeter
-for file in ~/.bash_files/{bash_config.sh,bash_prompt.sh,bash_greeter.sh}; do
+for file in ~/.bash_files/{bash_config.sh,bash_prompt.sh}; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -27,3 +27,9 @@ for file in ~/.bash_files/aliases/*aliases.sh; do
   [ -r "$file" ] && source "$file"
 done
 unset file
+
+
+# Load greeter
+if [ -f ~/.bash_files/bash_greeter.sh ]; then
+    . ~/.bash_files/bash_greeter.sh
+fi

@@ -1,9 +1,6 @@
 #!/bin/bash
 
 
-source ~/.bash_files/lib/base_print_functions.sh
-
-
 function __print_hostname_info()
 {
     local STR_HOSTNAME="-= $HOSTNAME =-"
