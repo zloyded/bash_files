@@ -13,6 +13,10 @@ Enjoy!
 
 ### Updates - New features
 
+##### 07.3.2015
+ - Created dedicated /aliases dir, all files matching the pattern `*aliases.sh` will be loaded by default
+ - Moved ls and apt into separate files
+
 ##### 06.03.2015
  - Created separate file for configuration values
 
