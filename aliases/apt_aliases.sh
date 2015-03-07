@@ -1,26 +1,6 @@
 #!/bin/bash
 
 
-__set_ls_aliases ()
-{
-	# enable color support of ls and also add handy aliases
-	if [ -x $(which dircolors) ]; then
-	    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-	    alias ls='ls --color=auto'
-	    #alias dir='dir --color=auto'
-	    #alias vdir='vdir --color=auto'
-
-	    alias ll='ls -alF'
-		alias la='ls -A'
-		alias l='ls -CF'
-
-	    alias grep='grep --color=auto'
-	    alias fgrep='fgrep --color=auto'
-	    alias egrep='egrep --color=auto'
-	fi
-}
-
-
 # apt shortcuts legend
 __print_apt_shortcuts_info ()
 {
