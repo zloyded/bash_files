@@ -1,13 +1,5 @@
 #!/bin/bash
 
-# ############################################################################ #
-#                                                                              #
-# Various greeting information - Needs /.bash_functions                        #
-#                                                                              #
-# binaryanomaly - v0.2                                                         #
-#                                                                              #
-# ############################################################################ #
-
 
 source ~/.bash_files/lib/base_print_functions.sh
 
@@ -30,7 +22,10 @@ function __print_hostname_info()
         fi
 
     else
+        printf "\n${BOLD}"
         __print_centered_string "$STR_HOSTNAME" "0"
+        printf "${ORANGE}"
+        __print_centered_string "$SYS_INFO" "0"
     fi
 
     printf "${NORMAL}\n"
@@ -61,6 +56,7 @@ function __print_diskinfo()
     printf "${NORMAL}\n"
 }
 
+
 function __print_lastlogins()
 {
     # LAST_LOGINS=$(last -in 3 -ad)
@@ -73,6 +69,7 @@ function __print_lastlogins()
 
     printf "${NORMAL}\n"
 }
+
 
 function __print_random_cmdinfo()
 {
@@ -101,15 +98,18 @@ if [ ! -z "$show_hostname" ]; then
 	__print_hostname_info
 fi
 
+
 if [ ! -z "$show_diskinfo" ]; then
 	__print_line
 	__print_diskinfo
 fi
 
+
 if [ ! -z "$show_lastlogins" ]; then
 	__print_line
 	__print_lastlogins
 fi
+
 
 # Load aliases
 if [ -f ~/.bash_files/bash_aliases.sh ]; then
@@ -123,6 +123,7 @@ if [ -f ~/.bash_files/bash_aliases.sh ]; then
 	fi
 fi
 
+
 if [ ! -z "$show_random_cmdinfo" ]; then
 
 	# Check if whatis is available
@@ -131,6 +132,7 @@ if [ ! -z "$show_random_cmdinfo" ]; then
 	    __print_random_cmdinfo
 	fi
 fi
+
 
 if [ -e /var/run/reboot-required ]; then
     __print_line
