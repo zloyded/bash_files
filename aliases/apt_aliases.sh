@@ -2,7 +2,7 @@
 
 
 # apt shortcuts legend
-__print_apt_shortcuts_info ()
+function __print_apt_shortcuts_info()
 {
 	local str_print="${GREEN}apts     ${GREY}=  sudo apt-cache search"$'\n'
 	str_print+="${GREEN}aptshow  ${GREY}=  sudo apt-cache show"$'\n'
@@ -13,13 +13,12 @@ __print_apt_shortcuts_info ()
 	str_print+="${GREEN}         ${GREY}   sudo apt-get autoremove"$'\n'
 	str_print+="${GREEN}chkup    ${GREY}=  /usr/lib/update-notifier/apt-check -p --human-readable"$'\n'
 
-
-	# print apt shortcuts
 	__print_centered_multiline "$str_print" "10"
 }
 
+
 # set apt aliases
-__set_apt_aliases ()
+function __set_apt_aliases()
 {
 	if [ -x $(which apt) ]; then
 		alias apts='sudo apt-cache search'

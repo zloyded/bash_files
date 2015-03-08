@@ -1,4 +1,6 @@
 #!/bin/bash
+#
+# Configure welcome screen info blocks her
 
 
 function __print_hostname_info()
@@ -90,6 +92,7 @@ function __print_reboot()
 # Change order of sections etc. below                                          #
 #                                                                              #
 # ############################################################################ #
+
 
 if [ ! -z "$show_hostname" ]; then
 	__print_hostname_info

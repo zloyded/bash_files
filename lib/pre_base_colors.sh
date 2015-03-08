@@ -1,5 +1,6 @@
 #!/bin/bash
-
+#
+# colors are defined herem, using tput
 
 # List all colors
 # ( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done; ) 
@@ -13,7 +14,6 @@ fi
 
 
 NORMAL=$(tput sgr0) # Reset text format to the terminal's default
-
 
 # -------------------------------
 
