@@ -17,7 +17,7 @@ Feel free to contribute, reuse, clone, etc.
 
 ### Updates - New features
 
-#### 08.03.2015
+##### 08.03.2015
  - Added OS type detection support for Linux and OS X
 
 ##### 07.3.2015
