@@ -6,19 +6,20 @@
 # $OSTYPE
 
 # -------------------------------
-# Load bash_colors.sh first
+# Load /lib/pre_base*.sh first
 # -------------------------------
 #
-if [ -f ~/.bash_files/lib/pre_base_colors.sh ]; then
-    . ~/.bash_files/lib/pre_base_colors.sh
-fi
+for file in ~/.bash_files/lib/pre_base*.sh; do
+  [ -r "$file" ] && source "$file"
+done
+unset file
 
 
 # -------------------------------
-# Load prompt, greeter
+# Load config files
 # -------------------------------
 #
-for file in ~/.bash_files/{bash_config.sh,bash_prompt.sh}; do
+for file in ~/.bash_files/config/*config.sh; do
   [ -r "$file" ] && source "$file"
 done
 unset file
@@ -45,9 +46,9 @@ unset file
 
 
 # -------------------------------
-# Load greeter
+# Finally load Welcome screen
 # -------------------------------
 #
-if [ -f ~/.bash_files/bash_greeter.sh ]; then
-    . ~/.bash_files/bash_greeter.sh
+if [ -f ~/.bash_files/welcome_screen.sh ]; then
+    . ~/.bash_files/welcome_screen.sh
 fi

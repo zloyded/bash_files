@@ -56,8 +56,8 @@ Add the following at the end of your `.bashrc` or `.bash_profile` in your home d
 
 ```bash
 # Bash_dotfiles initialization
-if [ -f ~/.bash_files/bash_init.sh ]; then
-    . ~/.bash_files/bash_init.sh
+if [ -f ~/.bash_files/init.sh ]; then
+    . ~/.bash_files/init.sh
 fi
 ```
 
@@ -83,15 +83,14 @@ The project lives in `~/.bash_files/`
 
 | Directory | Description |
 | ---- | ----------- |
+| aliases/  | Directory for alias definitions - `*aliases.sh` gets sourced |
+| config/  | Directory for config files - `*config.sh` gets sourced |
 | lib/ | Directory where basefunctionality is stored - `base*.sh` gets sourced |
-| aliases/  | Directory for alias definitions - `*.aliases.sh` gets sourced |
 
 <br>
 
 
 | File | Description |
 | ---- | ----------- |
-| bash_config.sh  | Project configuration file |
-| bash_greeter.sh  | Elements / functions that make the welcome screen |
-| bash_init.sh  | Init file that sources all the other files (color, prompt, greeter) |
-| bash_prompt.sh  | Bash prompt |
+| init.sh  | Init file that sources all the other dirs/files |
+| welcome_screen.sh  | Elements / functions that make the welcome screen |
