@@ -4,6 +4,19 @@
 
 
 # $OSTYPE
+case "$OSTYPE" in
+	linux*)
+		bf_ostype="linux"
+		;;
+    darwin*)
+		bf_ostype="osx"
+		;;
+	*)
+		printf "%s\n" "Unable to detect OS type, assuming Linux"
+		bf_ostype="linux"
+		;;
+esac
+
 
 # -------------------------------
 # Load /lib/pre_base*.sh first
