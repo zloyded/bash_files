@@ -5,6 +5,17 @@
 
 function __print_hostname_info()
 {
+    case $bf_ostype in
+        linux)
+            local STR_HOSTNAME="-= $HOSTNAME =-"
+            ;;
+        osx)
+            local STR_HOSTNAME="-= $(scutil --get LocalHostName) =-"
+            ;;
+    esac
+
+
+
     local STR_HOSTNAME="-= $HOSTNAME =-"
     local SYS_INFO="-= $(uname -srmo) =-"
 
