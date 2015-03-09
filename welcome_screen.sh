@@ -81,7 +81,7 @@ function __print_lastlogins()
 
 function __print_random_cmdinfo()
 {
-    rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
+    local rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
     rnd_cmd_info+=$(whatis $(ls /bin | shuf -n 1))
     __print_centered_multiline "$rnd_cmd_info" "0"
 
