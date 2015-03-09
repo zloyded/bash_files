@@ -13,3 +13,14 @@ bf_show_random_cmdinfo="1"
 
 # Prompt config
 bf_prompt_reboot_info="1"
+
+function __unset_config_vars()
+{
+	unset bf_show_hostname
+	unset bf_show_diskinfo
+	unset bf_show_lastlogins
+	unset bf_show_aliases
+	unset bf_show_random_cmdinfo
+
+	unset bf_prompt_reboot_info
+}

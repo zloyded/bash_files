@@ -59,9 +59,16 @@ unset file
 
 
 # -------------------------------
-# Finally load Welcome screen
+# Load Welcome screen
 # -------------------------------
 #
 if [ -f ~/.bash_files/welcome_screen.sh ]; then
     . ~/.bash_files/welcome_screen.sh
 fi
+
+
+# -------------------------------
+# Cleanup variables
+# -------------------------------
+#
+__unset_config_vars
