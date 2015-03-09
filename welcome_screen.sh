@@ -15,8 +15,6 @@ function __print_hostname_info()
     esac
 
 
-
-    local STR_HOSTNAME="-= $HOSTNAME =-"
     local SYS_INFO="-= $(uname -srmo) =-"
 
     # Check if figlet is available

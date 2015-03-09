@@ -97,3 +97,7 @@ The project lives in `~/.bash_files/`
 | ---- | ----------- |
 | init.sh  | Init file that sources all the other dirs/files |
 | welcome_screen.sh  | Elements / functions that make the welcome screen |
+
+## Conventions
+
+ - Use `bf_` prefix for variable names
