@@ -18,10 +18,10 @@ function __print_hostname_info()
     local SYS_INFO="-= $(uname -srmo) =-"
 
     # Check if figlet is available
-    if [[ -x $(which figlet) ]]; then
+    if [[ -x $(which figlet) &&  ! -z "$bf_figlet_on" ]]; then
 
         # Check if lolcat is available
-        if [[ -x $(which lolcat) ]]; then
+        if [[ -x $(which lolcat) &&  ! -z "$bf_lolcat_on" ]]; then
             #print hostname with figlets and lolcat coloring
             __print_ascii_art_lolcat "$STR_HOSTNAME" "$SYS_INFO"
         else
