@@ -10,6 +10,7 @@ bf_show_lastlogins=""
 bf_show_aliases=""
 bf_show_random_cmdinfo="1"
 
+# Welcome screen bling bling
 bf_figlet_on="1"
 bf_lolcat_on=
 

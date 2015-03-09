@@ -1,10 +1,11 @@
 #!/bin/bash
 #
-# Configure welcome screen info blocks her
+# Configure welcome screen info blocks
 
 
 function __print_hostname_info()
 {
+    # Set hostname string depending on OS used
     case $bf_ostype in
         linux)
             local STR_HOSTNAME="-= $HOSTNAME =-"
@@ -17,10 +18,10 @@ function __print_hostname_info()
 
     local SYS_INFO="-= $(uname -srmo) =-"
 
-    # Check if figlet is available
+    # Check if figlet is available and config var set
     if [[ -x $(which figlet) &&  ! -z "$bf_figlet_on" ]]; then
 
-        # Check if lolcat is available
+        # Check if lolcat is available and config var set
         if [[ -x $(which lolcat) &&  ! -z "$bf_lolcat_on" ]]; then
             #print hostname with figlets and lolcat coloring
             __print_ascii_art_lolcat "$STR_HOSTNAME" "$SYS_INFO"
@@ -38,18 +39,6 @@ function __print_hostname_info()
 
     printf "${NORMAL}\n"
 }
-
-
-# deprecated, merged into hostname_info
-# __print_sysinfo ()
-# {
-#     local SYS_INFO="-= $(uname -srmo) =-"
-
-#     printf ${ORANGE}
-#     __print_centered_string "$SYS_INFO" "0"
-
-#     printf "${NORMAL}\n"
-# }
 
 
 function __print_diskinfo()
@@ -88,7 +77,8 @@ function __print_random_cmdinfo()
     printf "${NORMAL}\n"
 }
 
-function __print_reboot()
+
+function __print_reboot_info()
 {
     printf "${BETTER_YELLOW}"
     __print_centered_string "Reboot required!"
@@ -145,5 +135,5 @@ fi
 
 if [ -e /var/run/reboot-required ]; then
     __print_line
-    __print_reboot
+    __print_reboot_info
 fi
