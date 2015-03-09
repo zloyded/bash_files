@@ -3,13 +3,13 @@
 # Config section 1 = show otherwise leave empty
 
 
-# Greeter info sections config
-show_hostname="1"
-show_diskinfo="1"
-show_lastlogins=""
-show_aliases=""
-show_random_cmdinfo="1"
+# Welcome screen info sections
+bf_show_hostname="1"
+bf_show_diskinfo="1"
+bf_show_lastlogins=""
+bf_show_aliases=""
+bf_show_random_cmdinfo="1"
 
 
 # Prompt config
-show_reboot_info="1"
+bf_prompt_reboot_info="1"

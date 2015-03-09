@@ -105,18 +105,18 @@ function __print_reboot()
 # ############################################################################ #
 
 
-if [ ! -z "$show_hostname" ]; then
+if [ ! -z "$bf_show_hostname" ]; then
 	__print_hostname_info
 fi
 
 
-if [ ! -z "$show_diskinfo" ]; then
+if [ ! -z "$bf_show_diskinfo" ]; then
 	__print_line
 	__print_diskinfo
 fi
 
 
-if [ ! -z "$show_lastlogins" ]; then
+if [ ! -z "$bf_show_lastlogins" ]; then
 	__print_line
 	__print_lastlogins
 fi
@@ -128,14 +128,14 @@ if [ -f ~/.bash_files/bash_aliases.sh ]; then
 
     # Print function for aliases
 	# which is in bash_alias.sh for easier maintenance
-	if [ ! -z "$show_aliases" ]; then
+	if [ ! -z "$bf_show_aliases" ]; then
 		__print_line
 		__print_apt_shortcuts_info
 	fi
 fi
 
 
-if [ ! -z "$show_random_cmdinfo" ]; then
+if [ ! -z "$bf_show_random_cmdinfo" ]; then
 
 	# Check if whatis is available
 	if [ -x $(which whatis) ]; then

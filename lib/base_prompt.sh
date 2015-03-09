@@ -10,7 +10,7 @@ function parse_git_branch() {
 }
 
 function reboot_required() {
-	if [ ! -z "$show_reboot_info" ]; then
+	if [ ! -z "$bf_prompt_reboot_info" ]; then
 		if [ -e /var/run/reboot-required ]; then
 			printf "${BETTER_YELLOW}Reboot required!${NORMAL}"
 		fi
