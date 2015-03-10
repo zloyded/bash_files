@@ -12,7 +12,7 @@ Feel free to contribute, reuse, clone, etc.
 
 -binaryanomaly
 
-
+<br>
 ---
 
 
@@ -21,6 +21,9 @@ Feel free to contribute, reuse, clone, etc.
 The current version (10.03.2015) looks like this:
 
 ![Bash_files welcome screen](http://i.imgur.com/zEKcdZk.png "Bash_files welcome screen")
+
+<br>
+---
 
 ### Updates - New features
 
@@ -42,8 +45,10 @@ The current version (10.03.2015) looks like this:
  - Random bash comand info (whatis)
  - Reboot required check and message on welcome screen and/or in prompt
 
+<br>
+---
 
-## Setup
+### Setup
 
 Clone the repository into your home directory, it will create the `.bash_files` subdirectory:
 
@@ -52,7 +57,7 @@ git clone https://github.com/binaryanomaly/bash_files ~/.bash_files
 ```
 
 
-### Invoke init file from .bashrc (.bash_profile on Mac OS X)
+#### Invoke init file from .bashrc (.bash_profile on Mac OS X)
 
 Add the following at the end of your `.bashrc` or `.bash_profile` in your home directory:
 
@@ -63,7 +68,7 @@ if [ -f ~/.bash_files/init.sh ]; then
 fi
 ```
 
-### Install additional packages
+#### Install additional packages
 
 Install figlet if you want the big hostname and lolcat if you want it colorized (the script will autodetect both):
 
@@ -78,8 +83,10 @@ brew install figlet
 gem install lolcat
 ```
 
+<br>
+---
 
-## Directory and file structure
+### Directory and file structure
 
 The project lives in `~/.bash_files/` 
 
