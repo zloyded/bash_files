@@ -13,7 +13,7 @@ Feel free to contribute, reuse, clone, etc.
 -binaryanomaly
 
 <br>
-
+---
 
 ### Screenshot
 The current version (10.03.2015) looks like this:
