@@ -16,11 +16,14 @@ function __print_hostname_info()
     esac
 
 
-    local SYS_INFO="-= $(uname -srmo) =-"
+    # Check for uname and retrieve kernel and architecture
+    if [[ -x $(which uname) ]]; then
+        local SYS_INFO="-= $(uname -srmo) =-"
+    fi
+
 
     # Check if figlet is available and config var set
     if [[ -x $(which figlet) &&  ! -z "$bf_figlet_on" ]]; then
-
         # Check if lolcat is available and config var set
         if [[ -x $(which lolcat) &&  ! -z "$bf_lolcat_on" ]]; then
             #print hostname with figlets and lolcat coloring
@@ -29,7 +32,6 @@ function __print_hostname_info()
             #Print hostename with figlets
             __print_ascii_art "$STR_HOSTNAME" "$SYS_INFO"
         fi
-
     else
         printf "\n${BOLD}"
         __print_centered_string "$STR_HOSTNAME" "0"
@@ -37,53 +39,61 @@ function __print_hostname_info()
         __print_centered_string "$SYS_INFO" "0"
     fi
 
+
     printf "${NORMAL}\n"
 }
 
+
 function __print_cpuinfo()
 {
-    cpuinfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
-    printf "${CYAN}"
-    __print_centered_string "$cpuinfo"
-    printf "\n${NORMAL}"
+    if [[ -f /proc/cpuinfo ]]; then
+        cpuinfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
+        
+        printf "${CYAN}"
+        __print_centered_string "$cpuinfo"
+        printf "\n${NORMAL}"
+    fi
 }
-
 
 
 function __print_diskinfo()
 {
-    # disk usage, don't show tmpfs, ecryptfs, encfs, bccfs, sfpfs
-    local DISK_INFO=$(df -h -x tmpfs -x devtmpfs -x ecryptfs -x fuse.encfs -x bccfs -x afpfs -T)
+    if [[ -x $(which df) ]]; then
+        # disk usage, don't show tmpfs, ecryptfs, encfs, bccfs, sfpfs
+        local DISK_INFO=$(df -h -x tmpfs -x devtmpfs -x ecryptfs -x fuse.encfs -x bccfs -x afpfs -T)
 
-    printf ${POWDER_BLUE}
-    __print_centered_multiline "$DISK_INFO" "0"
-    # printf "%s\n" "$DISK_INFO" | boxes -d ada-box -ph8v1
+        printf ${POWDER_BLUE}
+        __print_centered_multiline "$DISK_INFO" "0"
+        # printf "%s\n" "$DISK_INFO" | boxes -d ada-box -ph8v1
 
-    printf "${NORMAL}\n"
+        printf "${NORMAL}\n"
+    fi
 }
 
 
 function __print_lastlogins()
 {
-    # LAST_LOGINS=$(last -in 3 -ad)
-    # printf "%s\n" "$LAST_LOGINS" | boxes -d ada-box -ph8v1
-    local LAST_LOGINS=$(last -in 3 -ad)
-    #local linecount=$(printf "%s\n" "$LAST_LOGINS" | grep -c '^')
+    if [[ -x $(which last) ]]; then
+        local LAST_LOGINS=$(last -in 3 -ad)
+        #local linecount=$(printf "%s\n" "$LAST_LOGINS" | grep -c '^')
 
-    printf ${GREY}
-    __print_centered_multiline "$LAST_LOGINS" "0"
+        printf ${GREY}
+        __print_centered_multiline "$LAST_LOGINS" "0"
 
-    printf "${NORMAL}\n"
+        printf "${NORMAL}\n"
+    fi
 }
 
 
 function __print_random_cmdinfo()
 {
-    local rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
-    rnd_cmd_info+=$(whatis $(ls /bin | shuf -n 1))
-    __print_centered_multiline "$rnd_cmd_info" "0"
+    if [[ -x $(which whatis) ]]; then
+        local rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
+        rnd_cmd_info+=$(whatis $(ls /bin | shuf -n 1))
+        __print_centered_multiline "$rnd_cmd_info" "0"
 
-    printf "${NORMAL}\n"
+        printf "${NORMAL}\n"
+    fi
 }
 
 

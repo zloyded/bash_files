@@ -15,39 +15,32 @@ Feel free to contribute, reuse, clone, etc.
 
 ---
 
+
+
+### Screenshot
+The current version (10.03.2015) looks like this:
+
+![Bash_files welcome screen](http://i.imgur.com/zEKcdZk.png "Bash_files welcome screen")
+
 ### Updates - New features
 
 ##### 10.03.2015
  - Added cpuinfo
 
-##### 09.03.2015
- - Added additional config vars for features
+##### Feature list
 
-##### 08.03.2015
- - Added OS type detection support for Linux and OS X
+ - Config vars for features
+ - OS type detection support for Linux and OS X
+ - Cross-platform robust checks
 
-##### 07.3.2015
- - Created `lib/` dir for base functionality, all files matching the pattern `base*.sh` will be loaded by default
- - Created dedicated `/aliases` dir, all files matching the pattern `*aliases.sh` will be loaded by default
- - Moved ls and apt into separate files
-
-##### 06.03.2015
- - Created separate file for configuration values
-
-##### 04.03.2015
- - Added more cross-platform robust checks
- - Added reboot required check and message
- - Added basic config switches for info sections
-
-
-##### 03.03.2015
- - Lolcat support
- - Random bash cmd info
- - Last logins hidden by default
-
-For now customize directly in bash_greeter.sh what components you'd like to show.
-
-Version from 03.03.2015 looks like this: ![Bash Welcome Screen 03032015](http://i.imgur.com/jiCK38n.png "Bash Welcome Screen 03.03.2015")
+##### Info sections (configurable)
+ - Hostname with figlets, lolcat supported
+ - System info (kernel, architecture)
+ - Cpu info
+ - File system info
+ - Last logins
+ - Random bash comand info (whatis)
+ - Reboot required check and message on welcome screen and/or in prompt
 
 
 ## Setup
