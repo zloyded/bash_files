@@ -13,8 +13,6 @@ Feel free to contribute, reuse, clone, etc.
 -binaryanomaly
 
 <br>
----
-
 
 
 ### Screenshot
@@ -23,7 +21,7 @@ The current version (10.03.2015) looks like this:
 ![Bash_files welcome screen](http://i.imgur.com/zEKcdZk.png "Bash_files welcome screen")
 
 <br>
----
+
 
 ### Updates - New features
 
@@ -46,7 +44,7 @@ The current version (10.03.2015) looks like this:
  - Reboot required check and message on welcome screen and/or in prompt
 
 <br>
----
+
 
 ### Setup
 
@@ -84,7 +82,7 @@ gem install lolcat
 ```
 
 <br>
----
+
 
 ### Directory and file structure
 
@@ -104,6 +102,8 @@ The project lives in `~/.bash_files/`
 | init.sh  | Init file that sources all the other dirs/files |
 | welcome_screen.sh  | Elements / functions that make the welcome screen |
 
-## Conventions
+<br>
+
+### Conventions
 
  - Use `bf_` prefix for variable names
