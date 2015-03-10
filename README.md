@@ -27,6 +27,7 @@ The current version (10.03.2015) looks like this:
 
 ##### 10.03.2015
  - Added cpuinfo
+ - Added raminfo
 
 ##### Feature list
 

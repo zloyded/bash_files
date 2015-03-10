@@ -44,15 +44,25 @@ function __print_hostname_info()
 }
 
 
-function __print_cpuinfo()
+function __print_cpuraminfo()
 {
     if [[ -f /proc/cpuinfo ]]; then
-        cpuinfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
+        local cpuraminfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
         
+        if [[ -x $(which free) ]]; then
+            cpuraminfo+=" - "
+            cpuraminfo+=$(free -m | awk '/^Mem:/{print $2}')
+            cpuraminfo+=" MB RAM"
+        fi
+
         printf "${CYAN}"
-        __print_centered_string "$cpuinfo"
+        __print_centered_string "$cpuraminfo"
         printf "\n${NORMAL}"
+
     fi
+
+
+
 }
 
 
@@ -116,9 +126,9 @@ if [ ! -z "$bf_show_hostname" ]; then
 	__print_hostname_info
 fi
 
-if [ ! -z "$bf_show_cpuinfo" ]; then
+if [ ! -z "$bf_show_cpuraminfo" ]; then
     #__print_line
-    __print_cpuinfo
+    __print_cpuraminfo
 fi
 
 
