@@ -2,7 +2,8 @@
 #
 # Source all necessary files in correct order (bash colors first)
 
-# OS detection
+
+# Detect OS
 case "$OSTYPE" in
 	linux*)
 		bf_ostype="linux"

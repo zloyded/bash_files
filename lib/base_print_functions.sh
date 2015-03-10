@@ -16,6 +16,8 @@ __print_line ()
 __print_ascii_art ()
 {
     printf "%s\n" "$1" | figlet -w $COLUMNS -c
+    printf "${ORANGE}"
+    __print_centered_string "$2"
 }
 
 

@@ -27,7 +27,7 @@ function __print_hostname_info()
             __print_ascii_art_lolcat "$STR_HOSTNAME" "$SYS_INFO"
         else
             #Print hostename with figlets
-            __print_ascii_art "$STR_HOSTNAME"
+            __print_ascii_art "$STR_HOSTNAME" "$SYS_INFO"
         fi
 
     else
@@ -39,6 +39,15 @@ function __print_hostname_info()
 
     printf "${NORMAL}\n"
 }
+
+function __print_cpuinfo()
+{
+    cpuinfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
+    printf "${CYAN}"
+    __print_centered_string "$cpuinfo"
+    printf "\n${NORMAL}"
+}
+
 
 
 function __print_diskinfo()
@@ -95,6 +104,11 @@ function __print_reboot_info()
 
 if [ ! -z "$bf_show_hostname" ]; then
 	__print_hostname_info
+fi
+
+if [ ! -z "$bf_show_cpuinfo" ]; then
+    #__print_line
+    __print_cpuinfo
 fi
 
 

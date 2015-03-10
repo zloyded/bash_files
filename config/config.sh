@@ -6,6 +6,7 @@
 # Welcome screen info sections
 bf_show_hostname="1"
 bf_show_diskinfo="1"
+bf_show_cpuinfo="1"
 bf_show_lastlogins=""
 bf_show_aliases=""
 bf_show_random_cmdinfo="1"
@@ -21,6 +22,7 @@ bf_prompt_reboot_info="1"
 function __unset_config_vars()
 {
 	unset bf_show_hostname
+	unset bf_show_cpuinfo
 	unset bf_show_diskinfo
 	unset bf_show_lastlogins
 	unset bf_show_aliases
