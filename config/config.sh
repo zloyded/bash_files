@@ -32,5 +32,5 @@ function __unset_config_vars()
 	unset bf_figlet_on
 	unset bf_lolcat_on
 
-	unset bf_prompt_reboot_info
+	#unset bf_prompt_reboot_info
 }
