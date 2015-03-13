@@ -93,7 +93,7 @@ The project lives in `~/.bash_files/`
 | ---- | ----------- |
 | aliases/  | Directory for alias definitions - `*aliases.sh` gets sourced |
 | config/  | Directory for config files - `*config.sh` gets sourced |
-| lib/ | Directory where basefunctionality is stored - `base*.sh` gets sourced |
+| lib/ | Directory where base functionality is stored - `base*.sh` gets sourced |
 
 <br>
 
@@ -101,7 +101,6 @@ The project lives in `~/.bash_files/`
 | File | Description |
 | ---- | ----------- |
 | init.sh  | Init file that sources all the other dirs/files |
-| welcome_screen.sh  | Elements / functions that make the welcome screen |
 
 <br>
 
