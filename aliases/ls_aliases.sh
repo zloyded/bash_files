@@ -10,7 +10,7 @@ function __set_ls_aliases()
 	    alias dir='dir --color=auto'
 	    alias vdir='vdir --color=auto'
 
-	    alias ls='ls --color=auto'
+	    alias ls='ls --color=auto --group-directories-first'
 	    alias ll='ls -alF'
 		alias la='ls -A'
 		alias l='ls -CF'
