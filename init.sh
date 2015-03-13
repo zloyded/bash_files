@@ -19,7 +19,7 @@ esac
 
 
 # -------------------------------
-# Load /lib/pre_base*.sh first
+# Load /lib/pre_base*.sh files
 # -------------------------------
 #
 for file in ~/.bash_files/lib/pre_base*.sh; do
@@ -39,7 +39,7 @@ unset file
 
 
 # -------------------------------
-# Initialize base functionality
+# Initialize base files
 # -------------------------------
 #
 for file in ~/.bash_files/lib/base*.sh; do
@@ -49,7 +49,7 @@ unset file
 
 
 # -------------------------------
-# Load aliases
+# Load alias files
 # -------------------------------
 #
 for file in ~/.bash_files/aliases/*aliases.sh; do
@@ -59,11 +59,11 @@ unset file
 
 
 # -------------------------------
-# Load Welcome screen
+# Load Start screen
 # -------------------------------
 #
-if [ -f ~/.bash_files/welcome_screen.sh ]; then
-    . ~/.bash_files/welcome_screen.sh
+if [ -f ~/.bash_files/lib/start_screen.sh ]; then
+    . ~/.bash_files/lib/start_screen.sh
 fi
 
 
