@@ -65,6 +65,8 @@ function __print_publicip()
 {
     if [[ -x $(which dig) ]]; then
         local publicip=$(dig +short myip.opendns.com @resolver1.opendns.com)
+        # dig is better but if you only have port 80 available wget may become atrractive
+        # wget -qO- http://ipecho.net/plain
 
         printf "${BETTER_GREY}"
         __print_centered_string "External IP: $publicip"
