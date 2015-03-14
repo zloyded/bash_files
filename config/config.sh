@@ -5,6 +5,7 @@
 
 # Welcome screen info sections
 bf_show_hostname="1"
+bf_show_publicip="1"
 bf_show_diskinfo="1"
 bf_show_cpuraminfo="1"
 bf_show_raminfo="1"

@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Configure welcome screen info blocks
+# Configure start screen info blocks
 
 
 function __print_hostname_info()
@@ -18,7 +18,7 @@ function __print_hostname_info()
 
     # Check for uname and retrieve kernel and architecture
     if [[ -x $(which uname) ]]; then
-        local SYS_INFO="-= $(uname -srmo) =-"
+        local SYS_INFO="$(uname -srmo)"
     fi
 
 
@@ -40,9 +40,7 @@ function __print_hostname_info()
     fi
 
 
-    printf "${NORMAL}\n"
 }
-
 
 function __print_cpuraminfo()
 {
@@ -57,12 +55,20 @@ function __print_cpuraminfo()
 
         printf "${CYAN}"
         __print_centered_string "$cpuraminfo"
-        printf "\n${NORMAL}"
+        printf "${NORMAL}"
 
     fi
+}
 
 
+function __print_publicip()
+{
+    if [[ -x $(which curl) ]]; then
+        local publicip=$(curl -s http://ipecho.net/plain)
 
+        printf "${BETTER_GREY}"
+        __print_centered_string "External IP: $publicip"
+    fi
 }
 
 
@@ -126,9 +132,15 @@ if [ ! -z "$bf_show_hostname" ]; then
 	__print_hostname_info
 fi
 
+
 if [ ! -z "$bf_show_cpuraminfo" ]; then
     #__print_line
     __print_cpuraminfo
+fi
+
+
+if [ ! -z "$bf_show_publicip" ]; then
+    __print_publicip
 fi
 
 
