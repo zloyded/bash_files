@@ -32,6 +32,8 @@ The current version (10.03.2015) looks like this:
  - Added cpuinfo
  - Added raminfo
 
+---
+
 ##### Feature list
 
  - Config vars for features
