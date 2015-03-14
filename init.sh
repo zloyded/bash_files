@@ -1,6 +1,23 @@
 #!/bin/bash
 #
-# Source all necessary files in correct order (bash colors first)
+#
+
+# ------------------------------------------------------------------------------
+#
+# Initialization file
+# -------------------
+# The following is done here:
+# - OS detection, value is written to _bf_ostype
+# - Sourcing of all the needed dirs/files in the correct order:
+#	1. Source /lib/pre_base*.sh
+#	2. Source /config/*config.sh
+#	3. Source /lib/base*.sh
+#	4. Source /aliases/*aliases.sh
+#	5. 
+# - Load start screen /lib/start_screen.sh
+# - Unset unneeded variables
+#
+# ------------------------------------------------------------------------------
 
 
 # Detect OS
