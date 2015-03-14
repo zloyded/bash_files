@@ -72,10 +72,18 @@ if [ -f ~/.bash_files/init.sh ]; then
 fi
 ```
 
-#### Install additional packages
 
-Install
-- `dig` to determine the public ip via ipecho.net 
+#### Standard Linux commands used
+
+- `dig` to determine the public ip via ipecho.net
+- `free` for ram info
+- `df` for diskspace info
+- `last` for last logins
+- `whatis` for command related infos
+
+
+#### Additional packages that can optionally be installed
+
 - `figlet` for big ascii letter hostname
 - `lolcat` to colorize the ascii letter hostname
 
@@ -88,7 +96,6 @@ sudo apt-get install figlet lolcat
 
 **OS X** (homebrew)
 ```
-brew install dig
 brew install figlet
 gem install lolcat
 ```
