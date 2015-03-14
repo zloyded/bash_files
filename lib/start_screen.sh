@@ -63,7 +63,7 @@ function __print_cpuraminfo()
 
 function __print_publicip()
 {
-    if [[ -x $(which wget) ]]; then
+    if [[ -x $(which dig) ]]; then
         local publicip=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
         printf "${BETTER_GREY}"
