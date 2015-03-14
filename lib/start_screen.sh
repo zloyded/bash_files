@@ -63,8 +63,8 @@ function __print_cpuraminfo()
 
 function __print_publicip()
 {
-    if [[ -x $(which curl) ]]; then
-        local publicip=$(curl -s http://ipecho.net/plain)
+    if [[ -x $(which wget) ]]; then
+        local publicip=$(wget -qO- http://ipecho.net/plain)
 
         printf "${BETTER_GREY}"
         __print_centered_string "External IP: $publicip"
