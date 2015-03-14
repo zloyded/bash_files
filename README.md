@@ -75,7 +75,7 @@ fi
 #### Install additional packages
 
 Install
-- `wget` to determine the public ip via ipecho.net 
+- `dig` to determine the public ip via ipecho.net 
 - `figlet` for big ascii letter hostname
 - `lolcat` to colorize the ascii letter hostname
 
@@ -88,7 +88,7 @@ sudo apt-get install figlet lolcat
 
 **OS X** (homebrew)
 ```
-brew install wget
+brew install dig
 brew install figlet
 gem install lolcat
 ```

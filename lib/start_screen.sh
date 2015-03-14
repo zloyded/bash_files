@@ -64,7 +64,7 @@ function __print_cpuraminfo()
 function __print_publicip()
 {
     if [[ -x $(which wget) ]]; then
-        local publicip=$(wget -qO- http://ipecho.net/plain)
+        local publicip=$(dig +short myip.opendns.com @resolver1.opendns.com)
 
         printf "${BETTER_GREY}"
         __print_centered_string "External IP: $publicip"
