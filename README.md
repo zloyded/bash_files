@@ -72,6 +72,7 @@ if [ -f ~/.bash_files/init.sh ]; then
 fi
 ```
 
+<br>
 
 #### Dependencies - Standard Linux commands used
 
