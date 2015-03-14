@@ -25,6 +25,9 @@ The current version (10.03.2015) looks like this:
 
 ### Updates - New features
 
+##### 14.03.2015
+ - Added public ip info
+
 ##### 10.03.2015
  - Added cpuinfo
  - Added raminfo
