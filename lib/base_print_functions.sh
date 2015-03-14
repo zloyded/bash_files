@@ -25,6 +25,7 @@
 # Print a 80 char - line
 # Usage: _print_line
 # ------------------------------------------------------------------------------
+#
 _print_line()
 {
     # 80 chars line
@@ -40,6 +41,7 @@ _print_line()
 # Usage: _print_ascii_art "$1"
 # Param: $1  String variable to print
 # ------------------------------------------------------------------------------
+#
 _print_ascii_art()
 {
     printf "%s\n" "$1" | figlet -w $COLUMNS -c
@@ -53,6 +55,7 @@ _print_ascii_art()
 # Usage: _print_ascii_art_lolcat "$1"
 # Param: $1  String variable to print
 # ------------------------------------------------------------------------------
+#
 _print_ascii_art_lolcat()
 {
     { printf "%s\n" "$1" | figlet -w $COLUMNS -c ; __print_centered_string "$2" ; } | lolcat -S 550
@@ -64,6 +67,7 @@ _print_ascii_art_lolcat()
 # Usage: _print_centered_string "$1"
 # Param: $1  String variable to print
 # ------------------------------------------------------------------------------
+#
 _print_centered_string()
 {
     local c_string="$1"
@@ -81,6 +85,7 @@ _print_centered_string()
 # Param: $1  Multiline string variable to print
 # Param: $2  Fixed offset (optional)
 # ------------------------------------------------------------------------------
+#
 _print_centered_multiline()
 {
     # Find longest string

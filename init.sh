@@ -20,7 +20,9 @@
 # ------------------------------------------------------------------------------
 
 
-# Detect OS
+# -------------------------------
+# Detect OS type
+# -------------------------------
 case "$OSTYPE" in
 	linux*)
 		_bf_ostype="linux"
@@ -36,7 +38,7 @@ esac
 
 
 # -------------------------------
-# Load /lib/pre_base*.sh files
+# 1. Load /lib/pre_base*.sh files
 # -------------------------------
 #
 for file in ~/.bash_files/lib/pre_base*.sh; do
@@ -46,7 +48,7 @@ unset file
 
 
 # -------------------------------
-# Load config files
+# 2. Load config files
 # -------------------------------
 #
 for file in ~/.bash_files/config/*config.sh; do
@@ -56,7 +58,7 @@ unset file
 
 
 # -------------------------------
-# Initialize base files
+# 3. Load base files
 # -------------------------------
 #
 for file in ~/.bash_files/lib/base*.sh; do
@@ -66,7 +68,7 @@ unset file
 
 
 # -------------------------------
-# Load alias files
+# 4. Load alias files
 # -------------------------------
 #
 for file in ~/.bash_files/aliases/*aliases.sh; do
