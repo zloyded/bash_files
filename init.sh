@@ -6,10 +6,10 @@
 # Detect OS
 case "$OSTYPE" in
 	linux*)
-		bf_ostype="linux"
+		_bf_ostype="linux"
 		;;
     darwin*)
-		bf_ostype="osx"
+		_bf_ostype="osx"
 		;;
 	*)
 		printf "%s\n" "Unable to detect OS type, assuming Linux"
@@ -71,4 +71,4 @@ fi
 # Cleanup variables
 # -------------------------------
 #
-__unset_config_vars
+_unset_config_vars
