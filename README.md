@@ -74,7 +74,12 @@ fi
 
 #### Install additional packages
 
-Install figlet if you want the big hostname and lolcat if you want it colorized (the script will autodetect both):
+Install
+- `wget` to determine the public ip via ipecho.net 
+- `figlet` for big ascii letter hostname
+- `lolcat` to colorize the ascii letter hostname
+
+The script will autodetect if each of those is installed and disable the features if not found.
 
 **Linux** (apt)
 ```bash
@@ -83,6 +88,7 @@ sudo apt-get install figlet lolcat
 
 **OS X** (homebrew)
 ```
+brew install wget
 brew install figlet
 gem install lolcat
 ```
