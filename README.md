@@ -73,7 +73,7 @@ fi
 ```
 
 
-#### Standard Linux commands used
+#### Dependencies - Standard Linux commands used
 
 - `dig` to determine the public ip via ipecho.net
 - `free` for ram info
