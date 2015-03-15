@@ -5,10 +5,11 @@
 
 # Welcome screen info sections
 _bf_show_hostname="1"
+_bf_show_kernel="1"
+_bf_show_distro="1"
 _bf_show_publicip="1"
-_bf_show_diskinfo="1"
-_bf_show_cpuraminfo="1"
-_bf_show_raminfo="1"
+_bf_show_diskstats="1"
+_bf_show_cpuram="1"
 _bf_show_lastlogins=""
 _bf_show_aliases=""
 _bf_show_random_cmdinfo="1"
@@ -24,8 +25,9 @@ _bf_prompt_reboot_info="1"
 _unset_config_vars()
 {
 	unset _bf_show_hostname
-	unset _bf_show_cpuraminfo
-	unset _bf_show_diskinfo
+	unset _bf_show_kernel
+	unset _bf_show_cpuram
+	unset _bf_show_diskstats
 	unset _bf_show_lastlogins
 	unset _bf_show_aliases
 	unset _bf_show_random_cmdinfo

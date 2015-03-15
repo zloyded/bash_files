@@ -4,9 +4,9 @@
 
 
 # This function prints the hostnamw
-_print_hostname_info()
+_print_hostname()
 {
-    # Set hostname string depending on OS used
+    # Retrieve hostname string depending on OS used
     case $_bf_ostype in
         linux)
             local STR_HOSTNAME="-= $HOSTNAME =-"
@@ -16,33 +16,38 @@ _print_hostname_info()
             ;;
     esac
 
-
-    # Check for uname and retrieve kernel and architecture
-    if [[ -x $(which uname) ]]; then
-        local SYS_INFO="$(uname -srmo)"
-    fi
-
-
     # Check if figlet is available and config var set
     if [[ -x $(which figlet) &&  ! -z "$_bf_figlet_on" ]]; then
         # Check if lolcat is available and config var set
         if [[ -x $(which lolcat) &&  ! -z "$_bf_lolcat_on" ]]; then
             #print hostname with figlets and lolcat coloring
-            _print_ascii_art_lolcat "$STR_HOSTNAME" "$SYS_INFO"
+            _print_ascii_art_lolcat "$STR_HOSTNAME"
         else
             #Print hostename with figlets
-            _print_ascii_art "$STR_HOSTNAME" "$SYS_INFO"
+            _print_ascii_art "$STR_HOSTNAME"
         fi
     else
+        # No fancy ASCII art support available
         printf "\n${BOLD}"
         _print_centered_string "$STR_HOSTNAME"
-        printf "${ORANGE}"
+    fi
+}
+
+_print_kernel()
+{
+    # Check for uname and retrieve kernel and architecture
+    if [[ -x $(which uname) ]]; then
+        local SYS_INFO="$(uname -srmo)"
+
+        printf "${BETTER_YELLOW}"
         _print_centered_string "$SYS_INFO"
+        printf "${NORMAL}"
     fi
 }
 
 
-_print_cpuraminfo()
+
+_print_cpuram()
 {
     if [[ -f /proc/cpuinfo ]]; then
         local cpuraminfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
@@ -53,12 +58,31 @@ _print_cpuraminfo()
             cpuraminfo+=" MB RAM"
         fi
 
-        printf "${CYAN}"
+        printf "${ORANGE}"
         _print_centered_string "$cpuraminfo"
         printf "${NORMAL}"
 
     fi
 }
+
+
+
+_print_distro()
+{
+    if [[ -x $(which lsb_release) ]]; then
+        local distributor=$(lsb_release -si) # Ubuntu
+        local version=$(lsb_release -sr) # 15.04
+        local longname=$(lsb_release -sd) # Ubuntu Vivid Vervet (development branch)
+
+        local distro="$longname"
+        distro+=" $version"
+
+        printf "${CYAN}"
+        _print_centered_string "$distro"
+
+    fi
+}
+
 
 
 _print_publicip()
@@ -74,7 +98,7 @@ _print_publicip()
 }
 
 
-_print_diskinfo()
+_print_diskstats()
 {
     if [[ -x $(which df) ]]; then
         # disk usage, don't show tmpfs, ecryptfs, encfs, bccfs, sfpfs
@@ -131,13 +155,23 @@ _print_reboot_info()
 
 
 if [ ! -z "$_bf_show_hostname" ]; then
-	_print_hostname_info
+	_print_hostname
 fi
 
 
-if [ ! -z "$_bf_show_cpuraminfo" ]; then
+if [ ! -z "$_bf_show_cpuram" ]; then
     #__print_line
-    _print_cpuraminfo
+    _print_cpuram
+fi
+
+
+if [[ ! -z "$_bf_show_kernel" ]]; then
+    _print_kernel
+fi
+
+
+if [[ ! -z "$_bf_show_distro" ]]; then
+    _print_distro
 fi
 
 
@@ -146,9 +180,9 @@ if [ ! -z "$_bf_show_publicip" ]; then
 fi
 
 
-if [ ! -z "$_bf_show_diskinfo" ]; then
+if [ ! -z "$_bf_show_diskstats" ]; then
 	_print_line
-	_print_diskinfo
+	_print_diskstats
 fi
 
 
