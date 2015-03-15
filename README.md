@@ -16,14 +16,17 @@ Feel free to contribute, reuse, clone, etc.
 ---
 
 ### Screenshot
-The current version (10.03.2015) looks like this:
+The current version (15.03.2015) looks like this:
 
-![Bash_files welcome screen](http://i.imgur.com/zEKcdZk.png "Bash_files welcome screen")
+![Bash_files start screen](http://i.imgur.com/2D5fg2D.png "Bash_files start screen")
 
 <br>
 
 
 ### Updates - New features
+
+##### 15.03.2015
+- Added distribution info
 
 ##### 14.03.2015
  - Added public ip info
