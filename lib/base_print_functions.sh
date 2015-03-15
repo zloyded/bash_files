@@ -21,6 +21,9 @@
 # ------------------------------------------------------------------------------
 
 
+_set_local_scriptname "$BASH_SOURCE"
+
+
 # ------------------------------------------------------------------------------
 # Print a 80 char - line
 # Usage: _print_line
@@ -44,9 +47,13 @@ _print_line()
 #
 _print_ascii_art()
 {
-    printf "%s\n" "$1" | figlet -w $COLUMNS -c
-    printf "${ORANGE}"
-    _print_centered_string "$2"
+    if [[ -x $(which figlet) ]]; then
+        printf "%s\n" "$1" | figlet -w $COLUMNS -c
+        printf "${ORANGE}"
+        _print_centered_string "$2"
+    else
+        error_exit "figlet not found!\n"
+    fi
 }
 
 

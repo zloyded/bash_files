@@ -3,6 +3,9 @@
 # Configure start screen info blocks
 
 
+_set_local_scriptname "$BASH_SOURCE"
+
+
 # This function prints the hostnamw
 _print_hostname()
 {
@@ -32,6 +35,7 @@ _print_hostname()
         _print_centered_string "$STR_HOSTNAME"
     fi
 }
+
 
 _print_kernel()
 {
@@ -85,16 +89,12 @@ _print_distro()
 
 
 
-_print_publicip()
+_print_ext_ip()
 {
-    if [[ -x $(which dig) ]]; then
-        local publicip=$(dig +short myip.opendns.com @resolver1.opendns.com)
-        # dig is better but if you only have port 80 available wget may become atrractive
-        # wget -qO- http://ipecho.net/plain
+    _get_ext_ip # Get external ip and store it in _bf_ext_ip
 
-        printf "${BETTER_GREY}"
-        _print_centered_string "External IP: $publicip"
-    fi
+    printf "${BETTER_GREY}"
+    _print_centered_string "External IP: $_bf_ext_ip"
 }
 
 
@@ -132,8 +132,8 @@ _print_random_cmdinfo()
     if [[ -x $(which whatis) ]]; then
         local rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
         rnd_cmd_info+=$(whatis $(ls /bin | shuf -n 1))
+        
         _print_centered_multiline "$rnd_cmd_info"
-
         printf "${NORMAL}\n"
     fi
 }
@@ -175,8 +175,8 @@ if [[ ! -z "$_bf_show_distro" ]]; then
 fi
 
 
-if [ ! -z "$_bf_show_publicip" ]; then
-    _print_publicip
+if [ ! -z "$_bf_show_ext_ip" ]; then
+    _print_ext_ip
 fi
 
 
