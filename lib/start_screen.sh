@@ -53,20 +53,29 @@ _print_kernel()
 
 _print_cpuram()
 {
-    if [[ -f /proc/cpuinfo ]]; then
-        local cpuraminfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
-        
-        if [[ -x $(which free) ]]; then
-            cpuraminfo+=" - "
-            cpuraminfo+=$(free -m | awk '/^Mem:/{print $2}')
-            cpuraminfo+=" MB RAM"
+    case $_bf_ostype in
+    linux)
+        if [[ -f /proc/cpuinfo ]]; then
+            local cpuraminfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
         fi
+        ;;
+    osx)
+        if [[ -x $(which sysctl) ]]; then
+                sysctl -n machdep.cpu.brand_string
+        fi
+        ;;
+    esac
 
-        printf "${ORANGE}"
-        _print_centered_string "$cpuraminfo"
-        printf "${NORMAL}"
-
+    if [[ -x $(which free) ]]; then
+        cpuraminfo+=" - "
+        cpuraminfo+=$(free -m | awk '/^Mem:/{print $2}')
+        cpuraminfo+=" MB RAM"
     fi
+
+    printf "${ORANGE}"
+    _print_centered_string "$cpuraminfo"
+    printf "${NORMAL}"
+
 }
 
 
