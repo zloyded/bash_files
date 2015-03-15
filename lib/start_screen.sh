@@ -19,6 +19,9 @@ _print_hostname()
             ;;
     esac
 
+    # Spacer
+    printf "\n"
+
     # Check if figlet is available and config var set
     if [[ -x $(which figlet) &&  ! -z "$_bf_figlet_on" ]]; then
         # Check if lolcat is available and config var set
