@@ -31,10 +31,6 @@ The current version (15.03.2015) looks like this:
 ##### 14.03.2015
  - Added public ip info
 
-##### 10.03.2015
- - Added cpuinfo
- - Added raminfo
-
 ---
 
 ##### Feature list
@@ -44,9 +40,11 @@ The current version (15.03.2015) looks like this:
  - Cross-platform robust checks
 
 ##### Info sections (configurable)
- - Hostname with figlets, lolcat supported
+ - Hostname (figlets, lolcat supported)
+ - CPU, RAM info
+ - Distribution info
+ - External (public) IP
  - System info (kernel, architecture)
- - Cpu info
  - File system info
  - Last logins
  - Random bash comand info (whatis)
