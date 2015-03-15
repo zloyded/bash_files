@@ -61,7 +61,7 @@ _print_cpuram()
         ;;
     osx)
         if [[ -x $(which sysctl) ]]; then
-                sysctl -n machdep.cpu.brand_string
+            local cpuraminfo=$(sysctl -n machdep.cpu.brand_string)
         fi
         ;;
     esac
