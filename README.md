@@ -21,9 +21,10 @@ The current version (15.03.2015) looks like this:
 ![Bash_files start screen](http://i.imgur.com/2D5fg2D.png "Bash_files start screen")
 
 <br>
+---
+<br>
 
-
-### Updates - New features
+### Updates
 
 ##### 15.03.2015
 - Added distribution info
@@ -31,13 +32,16 @@ The current version (15.03.2015) looks like this:
 ##### 14.03.2015
  - Added public ip info
 
+<br>
 ---
+<br>
 
-##### Feature list
+#### Feature list
 
  - Config vars for features
  - OS type detection support for Linux and OS X
  - Cross-platform robust checks
+
 
 ##### Info sections (configurable)
  - Hostname (figlets, lolcat supported)
@@ -50,10 +54,16 @@ The current version (15.03.2015) looks like this:
  - Random bash comand info (whatis)
  - Reboot required check and message on welcome screen and/or in prompt
 
+
+#### Functions
+ - **extip** - Display external (public) ip using dig/opendns
+
+<br>
+---
 <br>
 
 
-### Setup
+### Installation
 
 Clone the repository into your home directory, it will create the `.bash_files` subdirectory:
 
@@ -126,4 +136,4 @@ The project lives in `~/.bash_files/`
 
 ### Conventions
 
- - Use `bf_` prefix for variable names
+ - Use `_bf_` prefix for variable names
