@@ -14,7 +14,7 @@ Feel free to contribute, reuse, clone, etc.
 <br>
 ---
 
-### Screenshot
+#### Screenshot
 The current version (15.03.2015) looks like this:
 
 ![Bash_files start screen](http://i.imgur.com/2D5fg2D.png "Bash_files start screen")
@@ -35,8 +35,9 @@ The current version (15.03.2015) looks like this:
 ---
 <br>
 
-#### Feature list
+### Feature list
 
+##### Generic features
  - Config vars for features
  - OS type detection support for Linux and OS X
  - Cross-platform robust checks
@@ -85,32 +86,29 @@ fi
 
 <br>
 
-#### Dependencies - Standard Linux commands used
+#### Dependencies
 
-- `dig` to determine the public ip via ipecho.net
+The following Standard Linux commands are needed:
+
+- `dig` to determine the public ip via opendns
 - `free` for ram info
 - `df` for diskspace info
 - `last` for last logins
 - `whatis` for command related infos
 
 
-#### Additional packages that can optionally be installed
+#### Optional dependencies
+
+The following optional packages are recommended to be installed:
 
 - `figlet` for big ascii letter hostname
 - `lolcat` to colorize the ascii letter hostname
 
+Install them using apt (Linux) or homebrew (Mac)
+
 The script will autodetect if each of those is installed and disable the features if not found.
 
-**Linux** (apt)
-```bash
-sudo apt-get install figlet lolcat
-```
 
-**OS X** (homebrew)
-```
-brew install figlet
-gem install lolcat
-```
 
 <br>
 ---
@@ -133,6 +131,8 @@ The project lives in `~/.bash_files/`
 | ---- | ----------- |
 | init.sh  | Init file that sources all the other dirs/files |
 
+<br>
+---
 <br>
 
 ### Conventions
