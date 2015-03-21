@@ -20,7 +20,7 @@ function set_xterm_title () {
 # Set xterm title
 case "$TERM" in
 	xterm*|rxvt*)
-	set_xterm_title "$USER@$HOSTNAME $SHELL"
+	set_xterm_title "$USER@$_bf_hostname $SHELL"
     ;;
 *)
     ;;

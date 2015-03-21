@@ -9,16 +9,6 @@ _set_local_scriptname "$BASH_SOURCE"
 # This function prints the hostnamw
 _print_hostname()
 {
-    # Retrieve hostname string depending on OS used
-    case $_bf_ostype in
-        linux)
-            local STR_HOSTNAME="-= $HOSTNAME =-"
-            ;;
-        osx)
-            local STR_HOSTNAME="-= $(scutil --get LocalHostName) =-"
-            ;;
-    esac
-
     # Spacer
     printf "\n"
 
@@ -27,15 +17,15 @@ _print_hostname()
         # Check if lolcat is available and config var set
         if [[ -x $(which lolcat) &&  ! -z "$_bf_lolcat_on" ]]; then
             #print hostname with figlets and lolcat coloring
-            _print_ascii_art_lolcat "$STR_HOSTNAME"
+            _print_ascii_art_lolcat "$_bf_hostname"
         else
             #Print hostename with figlets
-            _print_ascii_art "$STR_HOSTNAME"
+            _print_ascii_art "$_bf_hostname"
         fi
     else
         # No fancy ASCII art support available
         printf "\n${BOLD}"
-        _print_centered_string "$STR_HOSTNAME"
+        _print_centered_string "$_bf_hostname"
     fi
 }
 
@@ -56,7 +46,7 @@ _print_kernel()
 
 _print_cpuram()
 {
-    case $_bf_ostype in
+    case $_bf_os_type in
     linux)
         if [[ -f /proc/cpuinfo ]]; then
             local cpuraminfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
@@ -66,6 +56,9 @@ _print_cpuram()
         if [[ -x $(which sysctl) ]]; then
             local cpuraminfo=$(sysctl -n machdep.cpu.brand_string)
         fi
+        ;;
+    *)
+        local cpuraminfo=
         ;;
     esac
 
@@ -103,8 +96,6 @@ _print_distro()
 
 _print_ext_ip()
 {
-    _get_ext_ip # Get external ip and store it in _bf_ext_ip
-
     printf "${BETTER_GREY}"
     _print_centered_string "External IP: $_bf_ext_ip"
 }

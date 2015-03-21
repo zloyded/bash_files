@@ -15,20 +15,6 @@
 # ------------------------------------------------------------------------------
 
 
-# Detect OS type
-#
-case "$OSTYPE" in
-	linux*)
-		_bf_ostype="linux"
-		;;
-    darwin*)
-		_bf_ostype="osx"
-		;;
-	*)
-		printf "%s\n" "Unable to detect OS type, assuming Linux"
-		bf_ostype="linux"
-		;;
-esac
 
 
 # ------------------------------------------------------------------------------
@@ -46,6 +32,9 @@ _source_files()
 }
 
 
+# ------------------------------------------------------------------------------
+
+
 # 1. Load /lib/pre_base*.sh files
 files=~/.bash_files/lib/pre_base*.sh; _source_files
 
@@ -55,13 +44,27 @@ files=~/.bash_files/config/*config.sh; _source_files
 # 3. Load base files
 files=~/.bash_files/lib/base*.sh; _source_files
 
-# 4. Load alias files
+
+# ------------------------------------------------------------------------------
+
+
+_bf_detect_os_type
+_bf_get_hostname
+_bf_get_ext_ip
+
+
+# ------------------------------------------------------------------------------
+
+
+# Load alias files
 files=~/.bash_files/aliases/*aliases.sh; _source_files
 
 
 # Load Start screen
 files=~/.bash_files/lib/start_screen.sh; _source_files
 
+
+# ------------------------------------------------------------------------------
 
 # Cleanup variables
 #
