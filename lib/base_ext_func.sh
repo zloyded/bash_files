@@ -8,6 +8,5 @@
 #
 extip()
 {
-	_get_ext_ip
 	printf "$_bf_ext_ip"
 }
