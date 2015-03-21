@@ -17,6 +17,7 @@ _bf_show_cpuram="1"
 _bf_show_lastlogins=""
 _bf_show_aliases=""
 _bf_show_random_cmdinfo="1"
+_bf_show_fortune="1"
 
 
 # Start screen bling bling

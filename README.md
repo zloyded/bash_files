@@ -58,6 +58,7 @@ Most sections can be turned on and off in `config/config.sh`
 
 #### Functions
  - **extip** - Display external (public) ip using dig/opendns
+ - **colors** - Display the 256 colors/nr that can be used with bash
 
 <br>
 ---

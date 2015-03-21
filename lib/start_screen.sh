@@ -148,6 +148,12 @@ _print_reboot_info()
 }
 
 
+_bf_fortune()
+{
+    printf "\n\n${BETTER_GREY}"
+    fortune
+}
+
 # ############################################################################ #
 #                                                                              #
 # Change order of sections etc. below                                          #
@@ -166,12 +172,12 @@ if [ ! -z "$_bf_show_cpuram" ]; then
 fi
 
 
-if [[ ! -z "$_bf_show_kernel" ]]; then
+if [ ! -z "$_bf_show_kernel" ]; then
     _print_kernel
 fi
 
 
-if [[ ! -z "$_bf_show_distro" ]]; then
+if [ ! -z "$_bf_show_distro" ]; then
     _print_distro
 fi
 
@@ -193,30 +199,27 @@ if [ ! -z "$_bf_show_lastlogins" ]; then
 fi
 
 
-# Load aliases
-if [ -f ~/.bash_files/bash_aliases.sh ]; then
-    . ~/.bash_files/bash_aliases.sh
+# if [[ -x $(which figlet) &&  ! -z "$_bf_figlet_on" ]]; then
 
-    # Print function for aliases
-	# which is in bash_alias.sh for easier maintenance
-	if [ ! -z "$_bf_show_aliases" ]; then
-		_print_line
-		_print_apt_shortcuts_info
-	fi
+# Print aliases, which is in bash_alias.sh for easier maintenance
+if [[ -f ~/.bash_files/bash_aliases.sh && ! -z "$_bf_show_aliases" ]]; then
+	_print_line
+	_print_apt_shortcuts_info
 fi
 
 
-if [ ! -z "$_bf_show_random_cmdinfo" ]; then
-
-	# Check if whatis is available
-	if [ -x $(which whatis) ]; then
-	    _print_line
-	    _print_random_cmdinfo
-	fi
+if [[ -x $(which whatis) && ! -z "$_bf_show_random_cmdinfo" ]]; then
+    _print_line
+    _print_random_cmdinfo
 fi
 
 
 if [ -e /var/run/reboot-required ]; then
     _print_line
     _print_reboot_info
+fi
+
+
+if [[ -x $(which fortune) && ! -z "$_bf_show_fortune" ]]; then
+    _bf_fortune
 fi

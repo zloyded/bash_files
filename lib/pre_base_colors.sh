@@ -1,9 +1,7 @@
 #!/bin/bash
 #
-# colors are defined herem, using tput
+# colors are defined here, using tput
 
-# List all colors
-# ( x=`tput op` y=`printf %$((${COLUMNS}-6))s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done; ) 
 
 # Set term to 256color mode, if 256color is not supported, colors won't work properly
 if [[ $COLORTERM = gnome-* && $TERM = xterm ]] && infocmp gnome-256color >/dev/null 2>&1; then 
