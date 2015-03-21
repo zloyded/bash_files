@@ -1,7 +1,6 @@
 # Bash files
 
-This is my bash files Project for Linux which should also work on Mac OS X.
-It mainly grew out of the tweaks and additions I applied for my personal use.
+This is my bash files Project for Linux. It also works on Mac OS X with a few minor limitations. The project grew out of the tweaks and additions I applied for my personal use.
 
 Some inspiration was taken from projects such as [oh-my-zsh
 ](https://github.com/robbyrussell/oh-my-zsh/tree/master/lib), [bash-it](https://github.com/revans/bash-it) and others.
