@@ -42,7 +42,7 @@ The current version (15.03.2015) looks like this:
  - Cross-platform robust checks
 
 
-##### Info sections (configurable)
+##### Start screen - Info sections
  - Hostname (figlets, lolcat supported)
  - CPU, RAM info
  - Distribution info
@@ -53,6 +53,7 @@ The current version (15.03.2015) looks like this:
  - Random bash comand info (whatis)
  - Reboot required check and message on welcome screen and/or in prompt
 
+Most sections can be turned on and off in `config/config.sh`
 
 #### Functions
  - **extip** - Display external (public) ip using dig/opendns
@@ -62,7 +63,7 @@ The current version (15.03.2015) looks like this:
 <br>
 
 
-### Installation
+### Initial installation procedure
 
 Clone the repository into your home directory, it will create the `.bash_files` subdirectory:
 
@@ -112,7 +113,8 @@ gem install lolcat
 ```
 
 <br>
-
+---
+<br>
 
 ### Directory and file structure
 
