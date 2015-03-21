@@ -8,5 +8,5 @@
 #
 extip()
 {
-	printf "$_bf_ext_ip"
+	printf "Public IP is: ${BETTER_YELLOW} $_bf_ext_ip"
 }

@@ -15,8 +15,6 @@
 # ------------------------------------------------------------------------------
 
 
-
-
 # ------------------------------------------------------------------------------
 # Source dir/files according to pattern
 # Usage: _source_files, declare $files outside function, passing over

@@ -30,20 +30,6 @@ _print_hostname()
 }
 
 
-_print_kernel()
-{
-    # Check for uname and retrieve kernel and architecture
-    if [[ -x $(which uname) ]]; then
-        local SYS_INFO="$(uname -srmo)"
-
-        printf "${BETTER_YELLOW}"
-        _print_centered_string "$SYS_INFO"
-        printf "${NORMAL}"
-    fi
-}
-
-
-
 _print_cpuram()
 {
     case $_bf_os_type in
@@ -74,6 +60,18 @@ _print_cpuram()
 
 }
 
+
+_print_kernel()
+{
+    # Check for uname and retrieve kernel and architecture
+    if [[ -x $(which uname) ]]; then
+        local SYS_INFO="$(uname -srmo)"
+
+        printf "${BETTER_YELLOW}"
+        _print_centered_string "$SYS_INFO"
+        printf "${NORMAL}"
+    fi
+}
 
 
 _print_distro()

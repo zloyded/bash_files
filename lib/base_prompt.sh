@@ -17,4 +17,4 @@ function reboot_required() {
 	fi
 }
 
-PS1="\$(reboot_required)\n\[$GREY\]\t\n\[$RED\]\u\[$GREY\]@\[$ORANGE\]\h \[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] \[$RESET\]"
+PS1="\$(reboot_required)\n\[$GREY\]\t\n\[$CYAN\]\u\[$GREY\]@\[$ORANGE\]\h \[$YELLOW\]\w\[$WHITE\]\$([[ -n \$(git branch 2> /dev/null) ]] && echo \" on \")\[$PURPLE\]\$(parse_git_branch)\[$WHITE\] \[$RESET\]"
