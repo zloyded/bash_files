@@ -101,7 +101,7 @@ _print_ext_ip()
 
 _print_ssh_status()
 {
-    if [[ ! -z "$SSH_CLIENT" ]]; then
+    if [[ ! -z $SSH_CLIENT ]]; then
         printf "${GREEN}\n"
         printf "Connected through SSH: $SSH_CLIENT"
         printf "${NORMAL}\n"
@@ -196,9 +196,11 @@ if [ ! -z "$_bf_show_ext_ip" ]; then
     _print_ext_ip
 fi
 
-if [ ! -z "$_bf_show_ssh_status"]; then
+
+if [ ! -z "$_bf_show_ssh_status" ]; then
     _print_ssh_status
 fi
+
 
 if [ ! -z "$_bf_show_diskstats" ]; then
 	_print_line
