@@ -22,7 +22,7 @@ function reboot_required() {
 function host_color() {
 	# Detect if connection is through SSH
 	if [[ ! -z $SSH_CLIENT ]]; then
-		printf "{$GREEN}"
+		printf "${GREEN}"
 	else
 		printf "${ORANGE}"
 	fi
