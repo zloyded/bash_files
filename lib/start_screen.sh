@@ -196,6 +196,9 @@ if [ ! -z "$_bf_show_ext_ip" ]; then
     _print_ext_ip
 fi
 
+if [ ! -z "$_bf_show_ssh_status"]; then
+    _print_ssh_status()
+fi
 
 if [ ! -z "$_bf_show_diskstats" ]; then
 	_print_line
