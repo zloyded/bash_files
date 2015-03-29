@@ -20,7 +20,8 @@ function set_xterm_title () {
 # Set xterm title
 case "$TERM" in
 	xterm*|rxvt*)
-	set_xterm_title "$USER@$_bf_hostname $SHELL"
+	#set_xterm_title "$USER@$_bf_hostname $SHELL"
+	PROMPT_COMMAND='echo -ne "\033]0;${USER}@${HOSTNAME}: ${PWD} - ${SHELL}\007"'
     ;;
 *)
     ;;
