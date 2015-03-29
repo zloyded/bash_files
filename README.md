@@ -26,7 +26,7 @@ The current version (15.03.2015) looks like this:
 ### Updates
 
 ##### 29.03.2015
-- Added SSH detection
+- Added SSH detection on start screen and in prompt
 
 ##### 15.03.2015
 - Added distribution info
