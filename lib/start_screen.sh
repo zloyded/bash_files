@@ -99,6 +99,16 @@ _print_ext_ip()
 }
 
 
+_print_ssh_status()
+{
+    if [[ ! -z "$SSH_CLIENT" ]]; then
+        printf "${GREEN}\n"
+        printf "Connected through SSH: $SSH_CLIENT"
+        printf "${NORMAL}\n"
+    fi
+}
+
+
 _print_diskstats()
 {
     if [[ -x $(which df) ]]; then
