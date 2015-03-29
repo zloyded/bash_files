@@ -78,9 +78,17 @@ _print_ascii_art_lolcat()
 _print_centered_string()
 {
     local c_string="$1"
-    local mid=$(((${#c_string}+$COLUMNS)/2))
+    local len_c_string="${#c_string}"
+    local t_width="$(tput cols)"
+    local c_sum=$((len_c_string+t_width))
+    local mid=$((c_sum/2))
     local leftspace=$((${mid}-${#c_string}))
 
+    # printf "%s\n" "len_c_string: $len_c_string"
+    # printf "%s\n" "t_width: $t_width"
+    # printf "%s\n" "c_sum: $c_sum"
+    # printf "%s\n" "mid: $mid"
+    # printf "%s\n" "leftspace: $leftspace"
     printf "%-*s%s\n" $leftspace " " "$c_string"
 }
 
@@ -95,39 +103,38 @@ _print_centered_string()
 #
 _print_centered_multiline()
 {
+    local c_longest=0
+    local t_width="$(tput cols)"
+
+    
     # Find longest string
-    local strlen=0
     while IFS= read -r line
     do
         # Store length
-        if [ ${#line} -gt $strlen ]; then
-            strlen="${#line}"
+        if [ ${#line} -gt $c_longest ]; then
+            c_longest="${#line}"
         fi
     done <<< "$1"
 
-    # Apply if offset if provided
+    # Apply offset if provided
     if [[ ! -z "$2" ]]; then
 
         local offset=$2
-        strlen=$(($strlen-$offset))
+        local c_longest=$(($c_longest-$offset))
 
     fi
+
+    local c_sum=$((c_longest+t_width))
+    local c_mid=$((c_sum/2))
+    local c_leftspace=$((c_mid-c_longest))
+
 
     # Print each line with offset of longest string
     while IFS= read -r line
     do
-        _print_fixed_singleline "$line" "$strlen"
+        printf "%-*s%s\n" $c_leftspace " " "$line"
+
     done <<< "$1"
 
     strlen=0
-}
-
-
-_print_fixed_singleline()
-{
-    local c_string="$1"
-    local mid=$(((strlen+$COLUMNS)/2))
-    local leftspace=$((${mid}-strlen))
-    
-    printf "%-*s%s\n" $leftspace " " "$c_string"
 }
