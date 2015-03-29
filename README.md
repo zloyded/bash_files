@@ -25,6 +25,9 @@ The current version (15.03.2015) looks like this:
 
 ### Updates
 
+##### 29.03.2015
+- Added SSH detection
+
 ##### 15.03.2015
 - Added distribution info
 
