@@ -2,8 +2,9 @@
 
 
 # apt shortcuts legend
-function __print_apt_shortcuts_info()
+function pkg_shortcuts_info()
 {
+	# Build string
 	local str_print="${GREEN}apts     ${GREY}=  sudo apt-cache search"$'\n'
 	str_print+="${GREEN}aptshow  ${GREY}=  sudo apt-cache show"$'\n'
 	str_print+="${GREEN}aptinst  ${GREY}=  sudo apt-get install -V"$'\n'
@@ -12,13 +13,15 @@ function __print_apt_shortcuts_info()
 	str_print+="${GREEN}aptupgd  ${GREY}=  sudo apt-get update && sudo apt-get dist-upgrade -V &&"$'\n'
 	str_print+="${GREEN}         ${GREY}   sudo apt-get autoremove"$'\n'
 	str_print+="${GREEN}chkup    ${GREY}=  /usr/lib/update-notifier/apt-check -p --human-readable"$'\n'
+	str_print+="${GREEN}pkgfiles ${GREY}=  dpkg --listfiles"
 
-	__print_centered_multiline "$str_print" "10"
+	# Print string
+	_print_centered_multiline "$str_print" "10"
 }
 
 
 # set apt aliases
-function __set_apt_aliases()
+function _set_pkg_aliases()
 {
 	if [ -x $(which apt) ]; then
 		alias apts='sudo apt-cache search'
@@ -30,10 +33,9 @@ function __set_apt_aliases()
 
 		alias chkup='/usr/lib/update-notifier/apt-check -p --human-readable'
 		alias chkboot='cat /var/run/reboot-required'
+
+		alias pkgfiles='dpkg --listfiles'
 	fi
 }
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-__set_apt_aliases
+_set_pkg_aliases

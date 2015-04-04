@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-function __set_ls_aliases()
+function _set_ls_aliases()
 {
 	# Original Source: http://tldp.org/LDP/abs/html/sample-bashrc.html
 
@@ -18,8 +18,8 @@ function __set_ls_aliases()
 	alias lm='ll |more'        #  Pipe through 'more'
 	alias lr='ll -R'           #  Recursive ls.
 	alias la='ll -A'           #  Show hidden files.
-	alias tree='tree -Csuh'    #  Nice alternative to 'recursive ls' ...
+	alias tree='tree -C'    #  Nice alternative to 'recursive ls' ...
 }
 
-__set_ls_aliases
+_set_ls_aliases
 
