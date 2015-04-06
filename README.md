@@ -77,9 +77,9 @@ git clone https://github.com/binaryanomaly/bash_files ~/.bash_files
 ```
 
 
-#### Invoke init file from .bashrc (.bash_profile on Mac OS X)
+#### Invoke init file from .bash_profile
 
-Add the following at the end of your `.bashrc` or `.bash_profile` in your home directory:
+Add the following to the end of your `.bash_profile` in your home directory:
 
 ```bash
 # Bash_dotfiles initialization
@@ -88,6 +88,7 @@ if [ -f ~/.bash_files/init.sh ]; then
 fi
 ```
 
+We put this in `.bash_profile` and not .bashrc because we only want it to be executed when bash is executed and when bash is used.
 <br>
 
 #### Dependencies
