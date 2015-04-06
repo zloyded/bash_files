@@ -25,14 +25,6 @@ The current version (15.03.2015) looks like this:
 
 ### Updates
 
-##### 29.03.2015
-- Added SSH detection on start screen and in prompt
-
-##### 15.03.2015
-- Added distribution info
-
-##### 14.03.2015
- - Added public ip info
 
 <br>
 ---
@@ -44,6 +36,7 @@ The current version (15.03.2015) looks like this:
  - Config vars for features
  - OS type detection support for Linux and OS X
  - Cross-platform robust checks
+ - Aliases
 
 
 ##### Start screen - Info sections
@@ -51,6 +44,7 @@ The current version (15.03.2015) looks like this:
  - CPU, RAM info
  - Distribution info
  - External (public) IP
+ - SSH connection info
  - System info (kernel, architecture)
  - File system info
  - Last logins
