@@ -103,7 +103,7 @@ _print_ssh_status()
 {
     if [[ ! -z $SSH_CLIENT ]]; then
         printf "${GREEN}\n"
-        _print_centered_string "Connected through SSH: $SSH_CLIENT"
+        _print_centered_string "==> Connected through SSH: $SSH_CLIENT"
         printf "${NORMAL}\n"
     fi
 }
