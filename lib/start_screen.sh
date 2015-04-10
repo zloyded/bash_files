@@ -243,4 +243,6 @@ startscreen()
     fi
 }
 
+
+clear
 startscreen
