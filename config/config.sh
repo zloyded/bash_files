@@ -37,6 +37,7 @@ _unset_config_vars()
 	unset _bf_show_kernel
 	unset _bf_show_distro
 	unset _bf_show_ext_ip
+	unset _bf_show_ssh_status
 	unset _bf_show_cpuram
 	unset _bf_show_diskstats
 	unset _bf_show_lastlogins
