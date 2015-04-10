@@ -164,77 +164,83 @@ _bf_fortune()
     fortune
 }
 
+
+
 # ############################################################################ #
 #                                                                              #
 # Change order of sections etc. below                                          #
 #                                                                              #
 # ############################################################################ #
 
-
-if [ ! -z "$_bf_show_hostname" ]; then
-	_print_hostname
-fi
-
-
-if [ ! -z "$_bf_show_cpuram" ]; then
-    #__print_line
-    _print_cpuram
-fi
+startscreen()
+{
+    if [ ! -z "$_bf_show_hostname" ]; then
+    	_print_hostname
+    fi
 
 
-if [ ! -z "$_bf_show_kernel" ]; then
-    _print_kernel
-fi
+    if [ ! -z "$_bf_show_cpuram" ]; then
+        #__print_line
+        _print_cpuram
+    fi
 
 
-if [ ! -z "$_bf_show_distro" ]; then
-    _print_distro
-fi
+    if [ ! -z "$_bf_show_kernel" ]; then
+        _print_kernel
+    fi
 
 
-if [ ! -z "$_bf_show_ext_ip" ]; then
-    _print_ext_ip
-fi
+    if [ ! -z "$_bf_show_distro" ]; then
+        _print_distro
+    fi
 
 
-if [ ! -z "$_bf_show_ssh_status" ]; then
-    _print_ssh_status
-fi
+    if [ ! -z "$_bf_show_ext_ip" ]; then
+        _print_ext_ip
+    fi
 
 
-if [ ! -z "$_bf_show_diskstats" ]; then
-	_print_line
-	_print_diskstats
-fi
+    if [ ! -z "$_bf_show_ssh_status" ]; then
+        _print_ssh_status
+    fi
 
 
-if [ ! -z "$_bf_show_lastlogins" ]; then
-	_print_line
-	_print_lastlogins
-fi
+    if [ ! -z "$_bf_show_diskstats" ]; then
+    	_print_line
+    	_print_diskstats
+    fi
 
 
-# if [[ -x $(which figlet) &&  ! -z "$_bf_figlet_on" ]]; then
-
-# Print aliases, which is in bash_alias.sh for easier maintenance
-if [[ -f ~/.bash_files/bash_aliases.sh && ! -z "$_bf_show_aliases" ]]; then
-	_print_line
-	_print_apt_shortcuts_info
-fi
+    if [ ! -z "$_bf_show_lastlogins" ]; then
+    	_print_line
+    	_print_lastlogins
+    fi
 
 
-if [[ -x $(which whatis) && ! -z "$_bf_show_random_cmdinfo" ]]; then
-    _print_line
-    _print_random_cmdinfo
-fi
+    # if [[ -x $(which figlet) &&  ! -z "$_bf_figlet_on" ]]; then
+
+    # Print aliases, which is in bash_alias.sh for easier maintenance
+    if [[ -f ~/.bash_files/bash_aliases.sh && ! -z "$_bf_show_aliases" ]]; then
+    	_print_line
+    	_print_apt_shortcuts_info
+    fi
 
 
-if [ -e /var/run/reboot-required ]; then
-    _print_line
-    _print_reboot_info
-fi
+    if [[ -x $(which whatis) && ! -z "$_bf_show_random_cmdinfo" ]]; then
+        _print_line
+        _print_random_cmdinfo
+    fi
 
 
-if [[ -x $(which fortune) && ! -z "$_bf_show_fortune" ]]; then
-    _bf_fortune
-fi
+    if [ -e /var/run/reboot-required ]; then
+        _print_line
+        _print_reboot_info
+    fi
+
+
+    if [[ -x $(which fortune) && ! -z "$_bf_show_fortune" ]]; then
+        _bf_fortune
+    fi
+}
+
+startscreen
