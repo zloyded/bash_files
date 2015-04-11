@@ -23,8 +23,10 @@ The current version (15.03.2015) looks like this:
 ---
 <br>
 
-### Updates
+### Recent updates
 
+11.04.2015
+- Minor tweaks and enhancements
 
 <br>
 ---
@@ -76,7 +78,7 @@ git clone https://github.com/binaryanomaly/bash_files ~/.bash_files
 Add the following to the end of your `.bash_profile` in your home directory:
 
 ```bash
-# Bash_dotfiles initialization
+# .bash_files initialization
 if [ -f ~/.bash_files/init.sh ]; then
     . ~/.bash_files/init.sh
 fi
