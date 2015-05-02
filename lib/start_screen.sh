@@ -82,7 +82,7 @@ _print_distro()
         local longname=$(lsb_release -sd) # Ubuntu Vivid Vervet (development branch)
 
         local distro="$longname"
-        distro+=" $version"
+        # distro+=" $version"
 
         printf "${CYAN}"
         _print_centered_string "$distro"
