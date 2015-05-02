@@ -84,7 +84,7 @@ if [ -f ~/.bash_files/init.sh ]; then
 fi
 ```
 
-We put this in `.bash_profile` and not .bashrc because we only want it to be executed when bash is executed i.e. a user is logging in.
+We put this in `.profile` and not .bashrc because we only want it to be executed when bash is executed i.e. a user is logging in.
 <br>
 
 #### Dependencies
