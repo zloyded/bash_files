@@ -65,7 +65,7 @@ _print_ascii_art()
 #
 _print_ascii_art_lolcat()
 {
-    { printf "%s\n" "$1" | figlet -w $COLUMNS -c ; __print_centered_string "$2" ; } | lolcat -S 550
+    { printf "%s\n" "$1" | figlet -w $COLUMNS -c ; _print_centered_string "$2" ; } | lolcat -S 550
 }
 
 
