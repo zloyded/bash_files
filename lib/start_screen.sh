@@ -6,7 +6,7 @@
 _set_local_scriptname "$BASH_SOURCE"
 
 
-# This function prints the hostnamw
+# This function prints the hostname
 _print_hostname()
 {
     # Spacer
