@@ -39,11 +39,11 @@ _print_cpuram()
     case $_bf_os_type in
     linux)
         if [[ -f /proc/cpuinfo ]]; then
-            local cpuinfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
-            local real_cores=$(grep -m 1 "cpu cores" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
-            local virt_cores=$(grep -m 1 "siblings" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
+            local cpuinfo=$(grep -m 1 'model name' /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
+            local real_cores="$(grep -m 1 'cpu cores' /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')"
+            local virt_cores="$(grep -m 1 'siblings' /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')"
 
-            local cpuraminfo="$cpuinfo - Cores ($real_cores/$virt_cores) - $raminfo"
+            local cpuraminfo="$cpuinfo ($virt_cores/$real_cores) - $raminfo"
         fi
         ;;
     osx)
