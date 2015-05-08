@@ -32,27 +32,31 @@ _print_hostname()
 
 _print_cpuram()
 {
+    if [[ -x $(which free) ]]; then
+        raminfo="$(free -m | awk '/^Mem:/{print $2}') MB RAM"
+    fi
+
     case $_bf_os_type in
     linux)
         if [[ -f /proc/cpuinfo ]]; then
-            local cpuraminfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
+            local cpuinfo=$(grep -m 1 "model name" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
+            local real_cores=$(grep -m 1 "cpu cores" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
+            local virt_cores=$(grep -m 1 "siblings" /proc/cpuinfo | cut -d: -f2 | sed -e 's/^ *//')
+
+            local cpuraminfo="$cpuinfo - Cores ($real_cores/$virt_cores) - $raminfo"
         fi
         ;;
     osx)
         if [[ -x $(which sysctl) ]]; then
-            local cpuraminfo=$(sysctl -n machdep.cpu.brand_string)
+            local cpuinfo=$(sysctl -n machdep.cpu.brand_string)
+
+            local cpuraminfo="$cpuinfo - $raminfo"
         fi
         ;;
     *)
         local cpuraminfo=
         ;;
     esac
-
-    if [[ -x $(which free) ]]; then
-        cpuraminfo+=" - "
-        cpuraminfo+=$(free -m | awk '/^Mem:/{print $2}')
-        cpuraminfo+=" MB RAM"
-    fi
 
     printf "${ORANGE}"
     _print_centered_string "$cpuraminfo"
