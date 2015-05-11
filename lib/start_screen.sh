@@ -147,7 +147,7 @@ _print_random_cmdinfo()
     if [[ -x $(which whatis) ]]; then
         local rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
         rnd_cmd_info+=$(whatis $(ls /bin | shuf -n 1))
-        
+
         _print_centered_multiline "$rnd_cmd_info"
         printf "${NORMAL}\n"
     fi
