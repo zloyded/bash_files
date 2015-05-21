@@ -25,6 +25,9 @@ The current version (15.03.2015) looks like this:
 
 ### Recent updates
 
+09.5.2015
+- Added CPU core info for Linux and OS X
+
 11.04.2015
 - Minor tweaks and enhancements
 
