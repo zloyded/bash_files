@@ -12,6 +12,8 @@ function pkg_shortcuts_info()
 	str_print+="${GREEN}aptupg   ${GREY}=  sudo apt-get dist-upgrade -V && sudo apt-get autoremove"$'\n'
 	str_print+="${GREEN}aptupgd  ${GREY}=  sudo apt-get update && sudo apt-get dist-upgrade -V &&"$'\n'
 	str_print+="${GREEN}         ${GREY}   sudo apt-get autoremove"$'\n'
+	str_print+="${GREEN}aptrm    ${GREY}=  sudo apt-get remove"$'\n'
+	str_print+="${GREEN}aptpurge ${GREY}=  sudo apt-get remove --purge"$'\n'
 	str_print+="${GREEN}chkup    ${GREY}=  /usr/lib/update-notifier/apt-check -p --human-readable"$'\n'
 	str_print+="${GREEN}pkgfiles ${GREY}=  dpkg --listfiles"
 
@@ -30,6 +32,8 @@ function _set_pkg_aliases()
 		alias aptupd='sudo apt-get update'
 		alias aptupg='sudo apt-get dist-upgrade -V && sudo apt-get autoremove'
 		alias aptupgd='sudo apt-get update && sudo apt-get dist-upgrade -V && sudo apt-get autoremove'
+		alias aptrm='sudo apt-get remove'
+		alias aptpurge='sudo apt-get remove --purge'
 
 		alias chkup='/usr/lib/update-notifier/apt-check -p --human-readable'
 		alias chkboot='cat /var/run/reboot-required'
