@@ -1,6 +1,4 @@
 #!/bin/bash
-
-
 function _set_ls_aliases()
 {
 	# Original Source: http://tldp.org/LDP/abs/html/sample-bashrc.html
@@ -14,7 +12,7 @@ function _set_ls_aliases()
 	alias lu='ls -ltur --color'        #  Sort by/show access time,most recent last.
 
 	# # The ubiquitous 'll': directories first, with alphanumeric sorting:
-	alias ll="ls -lv --group-directories-first --color"
+	alias ll="ls -la "
 	alias lm='ll |more'        #  Pipe through 'more'
 	alias lr='ll -R'           #  Recursive ls.
 	alias la='ll -A'           #  Show hidden files.
