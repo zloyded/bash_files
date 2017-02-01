@@ -76,7 +76,7 @@ _print_kernel()
 {
     # Check for uname and retrieve kernel and architecture
     if [[ -x $(which uname) ]]; then
-        local SYS_INFO="$(uname -srmo)"
+        local SYS_INFO="$(uname -srm)"
 
         printf "${BETTER_YELLOW}"
         _print_centered_string "$SYS_INFO"
@@ -124,7 +124,7 @@ _print_diskstats()
 {
     if [[ -x $(which df) ]]; then
         # disk usage, don't show tmpfs, ecryptfs, encfs, bccfs, sfpfs
-        local DISK_INFO=$(df -h -x tmpfs -x devtmpfs -x ecryptfs -x fuse.encfs -x bccfs -x afpfs -T)
+        # local DISK_INFO=$(df -h tmpfs / -T)
 
         printf ${POWDER_BLUE}
         _print_centered_multiline "$DISK_INFO"
@@ -153,7 +153,7 @@ _print_random_cmdinfo()
 {
     if [[ -x $(which whatis) ]]; then
         local rnd_cmd_info="${BETTER_GREY}Random command info:${GREY}"$'\n'
-        rnd_cmd_info+=$(whatis $(ls /bin | shuf -n 1))
+        rnd_cmd_info+=$(whatis $(ls /bin | gshuf -n 1))
 
         _print_centered_multiline "$rnd_cmd_info"
         printf "${NORMAL}\n"

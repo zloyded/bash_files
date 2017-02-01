@@ -1,5 +1,5 @@
 #!/bin/bash
-
+IMAGE_NAME=$1
 
 alias dkb='docker build'		# Build container
 
@@ -19,3 +19,4 @@ alias dkip="docker inspect --format '{{ .NetworkSettings.IPAddress }}'"
 
 alias dkrmac='docker rm $(docker ps -a -q)' # Delete all Docker containers
 alias dkrmai='docker rmi $(docker images -a -q)' # Delete all images
+
