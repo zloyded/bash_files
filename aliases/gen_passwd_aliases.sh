@@ -1,5 +1,7 @@
 #!/bin/bash
-alias genpass="echo -e `date | base64 | awk '{print substr($0,0,8)}'`"
-
+function genpass {
+	LEN=$1
+	dd if=/dev/urandom bs=$LEN count=1 2>/dev/null| base64;
+}
 
 
